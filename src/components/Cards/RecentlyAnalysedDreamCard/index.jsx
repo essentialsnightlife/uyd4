@@ -13,8 +13,9 @@ import MKTypography from "../../MKTypography";
 
 // @mui material components
 import DeleteIcon from "@mui/icons-material/Delete";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
-function RecentlyAnalysedDreamCard({ name, date, response }) {
+function RecentlyAnalysedDreamCard({ query, date, response }) {
   return (
     <Card sx={{ mt: 3 }}>
       <Grid container>
@@ -23,10 +24,11 @@ function RecentlyAnalysedDreamCard({ name, date, response }) {
             <MKTypography variant="h6" color={date.color} mb={1}>
               {date.label}
             </MKTypography>
-            <MKTypography variant="h5">{name}</MKTypography>
+            <MKTypography variant="h5">{query}</MKTypography>
             <MKTypography variant="body2" color="text">
               {response}
             </MKTypography>
+            <FavoriteIcon />
             <DeleteIcon />
           </MKBox>
         </Grid>
@@ -37,7 +39,7 @@ function RecentlyAnalysedDreamCard({ name, date, response }) {
 
 // Typechecking props for the HorizontalTeamCard
 RecentlyAnalysedDreamCard.propTypes = {
-  name: PropTypes.string.isRequired,
+  query: PropTypes.string.isRequired,
   date: PropTypes.shape({
     color: PropTypes.oneOf([
       "primary",

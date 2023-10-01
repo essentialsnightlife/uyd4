@@ -1,14 +1,10 @@
 import * as React from "react";
 
-// react-router components
-import { Link } from "react-router-dom";
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
 // @mui material components
 import Card from "@mui/material/Card";
-import MuiLink from "@mui/material/Link";
 
 // Material Kit 2 React components
 import MKBox from "../../MKBox";
@@ -16,20 +12,27 @@ import MKTypography from "../../MKTypography";
 import MKButton from "../../MKButton";
 import MKInput from "../../MKInput";
 
-function DreamAnalyserCard({ title, action }) {
+function DreamAnalyserCard({ title, maxLength, query, onChange, placeholderText, action }) {
   return (
     <Card>
-      <MKBox p={3} mt={-1} textAlign="center">
+      <MKBox p={3} mt={0} textAlign="center">
         <MKTypography display="inline" variant="h5" textTransform="capitalize" fontWeight="regular">
           {title}
         </MKTypography>
         <MKBox mt={1} mb={3}>
-          <MKInput label="Type here..." multiline rows={3} fullWidth />
+          <MKInput
+            maxLength={maxLength}
+            multiline
+            rows={3}
+            fullWidth
+            label={placeholderText}
+            value={query}
+            onChange={onChange}
+          />
         </MKBox>
         {action.type === "external" ? (
           <MKButton
-            component={MuiLink}
-            href={action.route}
+            type="submit"
             target="_blank"
             rel="noreferrer"
             variant="gradient"
@@ -40,8 +43,7 @@ function DreamAnalyserCard({ title, action }) {
           </MKButton>
         ) : (
           <MKButton
-            component={Link}
-            to={action.route}
+            type="submit"
             variant="gradient"
             size="small"
             color={action.color ? action.color : "dark"}
@@ -57,9 +59,12 @@ function DreamAnalyserCard({ title, action }) {
 // Typechecking props for the CenteredBlogCard
 DreamAnalyserCard.propTypes = {
   title: PropTypes.string.isRequired,
+  maxLength: PropTypes.number.isRequired,
+  query: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholderText: PropTypes.string,
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]).isRequired,
-    route: PropTypes.string.isRequired,
     color: PropTypes.oneOf([
       "primary",
       "secondary",
