@@ -1,0 +1,108 @@
+service: uyd
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: eu-west-2
+  lambdaHashingVersion: 20201221
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:DescribeTable
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+            - dynamodb:BatchGetItem
+          Resource:
+            - "Fn::GetAtt": [analysedDreams, Arn]
+  environment:
+    TABLE_NAME:
+      Ref: analysedDreams
+    OPENAI_API_KEY: ${file(./src/conf/serverless.yml):OPENAI_API_KEY}
+  httpApi:
+    cors:
+      allowedOrigins:
+        - http://localhost:3000
+        - http://localhost:3001
+        - http://127.0.0.1:5173
+        - https://www.useyourdream.com
+        - https://uyd.vercel.app/
+
+functions:
+  save-analysed-dream:
+    handler: src/lambdas/analysedDreams/functions/handler.save
+    events:
+      - sns: AnsweredQueryTopic
+
+  dream-analyser:
+    handler: src/lambdas/ai/functions/handler.analyser
+    events:
+      - httpApi:
+          path: /dreams/analyse
+          method: POST
+
+  del-analysed-dreams:
+    handler: src/lambdas/analysedDreams/functions/handler.del
+    events:
+      - httpApi:
+          path: /dreams/{id}
+          method: DELETE
+
+  get-user-analysed-dreams:
+    handler: src/lambdas/analysedDreams/functions/handler.getUserAnalysedDreams
+    events:
+      - httpApi:
+          path: /dreams/{userId}
+          method: GET
+
+plugins:
+  - serverless-esbuild
+  - serverless-offline-sns
+
+resources:
+  Resources:
+    analysedDreams:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: analysedDreams
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    SNSTopicPolicy:
+      Type: AWS::SNS::TopicPolicy
+      Properties:
+        Topics:
+          - arn:aws:sns:eu-west-2:410317984454:DreamRecordTopic
+          - arn:aws:sns:eu-west-2:410317984454:TestTopic
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Sid: AllowLambdaReceivingSNSMessages
+              Effect: Allow
+              Principal:
+                Service: lambda.amazonaws.com
+              Action: sns:Receive
+              Resource: "*"
+            - Sid: AllowSNSSendMessage
+              Effect: Allow
+              Principal:
+                Service: sns.amazonaws.com
+              Action: sns:Publish
+              Resource: "*"
+
+custom:
+  serverless-offline-sns:
+    port: 4002
+    debug: false

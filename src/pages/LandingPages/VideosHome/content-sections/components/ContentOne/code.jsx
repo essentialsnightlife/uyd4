@@ -20,7 +20,7 @@ import MKTypography from "components/MKTypography";
 // Images
 import bg1 from "assets/images/bg.jpg";
 import bg2 from "assets/images/examples/content-1.jpg";
-import bg3 from "assets/images/examples/content-2.jpg";
+import bg3 from "assets/images/examples//content-2.jpg";
 import bg4 from "assets/images/examples/content-3.jpg";
 import bg5 from "assets/images/examples/content-4.jpg";
 import bg6 from "assets/images/examples/content-5.jpg";

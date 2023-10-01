@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
+import viteTsconfigPaths from "vite-tsconfig-paths";
 import svgrPlugin from "vite-plugin-svgr";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -24,8 +25,8 @@ export default defineConfig({
     },
   },
   esbuild: {
-    loader: "jsx",
-    include: ["src/**/*.jsx", "src/**/*.js", "node_modules/**/*.js"],
+    loader: "tsx",
+    include: ["src/**/*.jsx", "src/**/*.js", "src/**/*.tsx", "src/**/*.ts", "node_modules/**/*.js"],
     exclude: [],
   },
   optimizeDeps: {
@@ -33,6 +34,7 @@ export default defineConfig({
     esbuildOptions: {
       loader: {
         ".js": "jsx",
+        ".ts": "tsx",
       },
     },
   },
@@ -41,6 +43,7 @@ export default defineConfig({
   },
   plugins: [
     reactRefresh(),
+    viteTsconfigPaths(),
     svgrPlugin({
       svgrOptions: {
         icon: true,

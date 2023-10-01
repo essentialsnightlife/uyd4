@@ -42,7 +42,7 @@ function MainPageCards() {
         </Grid>
         <Grid container spacing={3} mt={3}>
           <Grid item xs={12} lg={4}>
-            <Link to="/sections/page-sections/blog-posts">
+            <Link to="/pages/landing-pages/dream-analyser">
               <SectionCards
                 image={post1}
                 title="Free Dream Analyser"
@@ -52,7 +52,7 @@ function MainPageCards() {
             </Link>
           </Grid>
           <Grid item xs={12} lg={4}>
-            <Link to="/sections/page-sections/blog-posts">
+            <Link to="/pages/guides">
               <SectionCards
                 image={post2}
                 title="Dreaming Guides & FAQs"
@@ -62,14 +62,9 @@ function MainPageCards() {
             </Link>
           </Grid>
           <Grid item xs={12} lg={4}>
-            <Link to="/sections/page-sections/blog-posts">
-              <SectionCards
-                image={post3}
-                title="Shop Dreaming Products"
-                description="Free people make free choices. Free choices mean you get unequal outcomes. You
-                    can have freedom, or you can have equal outcomes. You can't have both."
-              />
-            </Link>
+            {/*<Link to="/sections/page-sections/blog-posts">*/}
+            <SectionCards image={post3} title="Shop Dreaming Products" description="Coming soon." />
+            {/*</Link>*/}
           </Grid>
         </Grid>
       </Container>
