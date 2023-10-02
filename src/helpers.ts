@@ -15,13 +15,13 @@ export function formatDate(dateStr: string) {
 
 export const sortedAnalysedDreams = (analysedDreams: AnalysedDream[]) => {
   console.log(analysedDreams);
-  if (!analysedDreams) return [];
   analysedDreams.sort((a, b) => {
     if (!a.date || !b.date) {
       return 0;
     }
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
+  return Array.isArray(analysedDreams) ? analysedDreams : [];
 };
 
 export const apiCallsLeft = (analysedDreams: AnalysedDream[], max: number) => {
