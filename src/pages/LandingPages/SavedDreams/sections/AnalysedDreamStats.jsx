@@ -9,19 +9,24 @@ import MKBox from "components/MKBox";
 
 // Material Kit 2 React examples
 import DefaultCounterCard from "examples/Cards/CounterCards/DefaultCounterCard";
+import PropTypes from "prop-types";
 
-function AnalysedDreamStats() {
+function AnalysedDreamStats({ count }) {
   return (
     <MKBox component="section" pt={1} pb={1}>
       <Container>
         <Grid container justifyContent="center" sx={{ textAlign: "center" }}>
           <Grid item xs={12} md={3}>
-            <DefaultCounterCard count={3} title="Dreams Analysed" description="" />
+            <DefaultCounterCard count={count} title="Dreams Analysed" description="" />
           </Grid>
         </Grid>
       </Container>
     </MKBox>
   );
 }
+
+AnalysedDreamStats.propTypes = {
+  count: PropTypes.number.isRequired,
+};
 
 export default AnalysedDreamStats;

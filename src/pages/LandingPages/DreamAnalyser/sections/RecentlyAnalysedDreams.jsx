@@ -13,7 +13,8 @@ import MKTypography from "src/components/MKTypography";
 import RecentlyAnalysedDreamCard from "src/components/Cards/RecentlyAnalysedDreamCard";
 import PropTypes from "prop-types";
 import { formatDate } from "/@//helpers";
-function RecentlyAnalysedDreams({ analysedDreams, title, subtitle }) {
+function RecentlyAnalysedDreams({ dreams, title, subtitle, count = 10 }) {
+  console.log(dreams);
   return (
     <MKBox
       component="section"
@@ -36,44 +37,18 @@ function RecentlyAnalysedDreams({ analysedDreams, title, subtitle }) {
           </Grid>
         </Grid>
         <Grid container spacing={3}>
-          {analysedDreams.map((dream, i) => (
-            <Grid key={i} item xs={12} lg={6}>
-              <MKBox mb={1}>
-                <RecentlyAnalysedDreamCard
-                  query={dream.query}
-                  date={{ color: "secondary", label: formatDate(dream.date) }}
-                  response={dream.response}
-                />
-              </MKBox>
-            </Grid>
-          ))}
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>{" "}
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>{" "}
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
+          {Array.isArray(dreams) &&
+            dreams.splice(0, count).map((dream, i) => (
+              <Grid key={i} item xs={12} lg={6}>
+                <MKBox mb={1}>
+                  <RecentlyAnalysedDreamCard
+                    query={dream.query}
+                    date={{ color: "secondary", label: formatDate(dream.date) }}
+                    response={dream.response}
+                  />
+                </MKBox>
+              </Grid>
+            ))}
         </Grid>
         <MKBox mt={2}>
           <MKTypography
@@ -108,7 +83,7 @@ function RecentlyAnalysedDreams({ analysedDreams, title, subtitle }) {
 }
 
 RecentlyAnalysedDreams.propTypes = {
-  analysedDreams: PropTypes.arrayOf(
+  dreams: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       userId: PropTypes.string.isRequired,
@@ -119,6 +94,7 @@ RecentlyAnalysedDreams.propTypes = {
   ).isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 export default RecentlyAnalysedDreams;

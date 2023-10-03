@@ -25,7 +25,22 @@ import footerRoutes from "src/footer";
 // Images
 import bgImage from "assets/images/pexels-kaique-rocha-447329.jpg";
 
+// Hooks
+import { useSupabaseSession } from "src/auth/client";
+import { useEffect, useState } from "react";
+
 function SavedDreams() {
+  const [userSession, setUserSession] = useState(null);
+  const [savedDreams, setSavedDreams] = useState([]);
+
+  const { session, analysedDreams } = useSupabaseSession();
+
+  useEffect(() => {
+    session && setUserSession(session);
+    analysedDreams && setSavedDreams(analysedDreams);
+    console.log("SavedDreamsPage", analysedDreams);
+  }, [userSession, analysedDreams]);
+
   return (
     <>
       <DefaultNavbar routes={routes} brand={"Use Your Dream"} transparent light />
@@ -82,9 +97,8 @@ function SavedDreams() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <AnalysedDreamStats />
-        {/*<NoDreamsAnalysed />*/}
-        <AnalysedDreams />
+        <AnalysedDreamStats count={savedDreams.length} />
+        <AnalysedDreams dreams={savedDreams} />
         <Newsletter />
       </Card>
       <MKBox pt={4} px={1} mt={4}>

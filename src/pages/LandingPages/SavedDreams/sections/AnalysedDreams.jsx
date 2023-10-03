@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -12,15 +12,31 @@ import ArrowBack from "@mui/icons-material/ArrowBack";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 
-// Material Kit 2 React examples
+// Cards
 import RecentlyAnalysedDreamCard from "src/components/Cards/RecentlyAnalysedDreamCard";
 
-function AnalysedDreams() {
+// Sections
+import NoDreamsAnalysed from "pages/LandingPages/SavedDreams/sections/NoDreamsAnalysed";
+
+// Helpers
+import { formatDate } from "/@//helpers";
+
+function AnalysedDreams(dreams) {
+  const [savedDreams, setSavedDreams] = useState([]);
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    const unpackedDreams = dreams.dreams;
+    setSavedDreams(unpackedDreams);
+  }, [dreams]);
 
   const handleChange = (event, value) => {
     setPage(value);
   };
+
+  if (savedDreams.length === 0) {
+    return <NoDreamsAnalysed />;
+  }
 
   return (
     <MKBox
@@ -34,186 +50,18 @@ function AnalysedDreams() {
     >
       <Container>
         <Grid container spacing={3}>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <RecentlyAnalysedDreamCard
-                query="Why do I keep dreaming about my ex?"
-                date={{ color: "secondary", label: "Mon 13 May 2023 08:00" }}
-                response="Your dream is a reflection of your previous relationship with your ex. Focus your emotional energy elsewhere. If he reaches out to you in the future, then speak with him about your thoughts and feelings at that time."
-              />
-            </MKBox>
-          </Grid>
+          {Array.isArray(savedDreams) &&
+            savedDreams.map((dream) => (
+              <Grid key={dream.id} item xs={12} lg={6}>
+                <MKBox mb={1}>
+                  <RecentlyAnalysedDreamCard
+                    query={dream.query}
+                    date={{ color: "secondary", label: formatDate(dream.date) }}
+                    response={dream.response}
+                  />
+                </MKBox>
+              </Grid>
+            ))}
         </Grid>
         <MKBox mt={5}>
           <Pagination

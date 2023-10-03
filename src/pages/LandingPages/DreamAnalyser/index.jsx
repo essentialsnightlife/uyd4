@@ -28,65 +28,33 @@ import footerRoutes from "src/footer.routes";
 import bgImage from "assets/images/bg-about-us.jpg";
 import AnalyserResponse from "pages/LandingPages/DreamAnalyser/sections/AnalyserResponse";
 
-// Helpers
-import { apiCallsLeft, formatterAnalysedDream, sortedAnalysedDreams } from "/@//helpers";
+// Functions & Helpers
+import { analyseDream, publishAnalysedDream } from "/@//apis";
+import { apiCallsLeft, formatterAnalysedDream } from "/@//helpers";
 import { DEFAULT_MAX_API_CALLS } from "/@//constants";
-import { analyseDream, getUsersDreams, publishAnalysedDream } from "/@//apis";
-import { supabaseClient } from "/@//auth/client";
+import { useSupabaseSession } from "/@//auth/client";
 
 function DreamAnalyser() {
   const [query, setQuery] = useState("");
-  const [analysedDreams, setAnalysedDreams] = useState([
-    {
-      query: "I was flying I was flying I was flying",
-      response:
-        "You are a bird. You can fly. You are a bird. You can fly. You are a bird. You can fly. You are a bird. You can fly. You are a bird. You can fly.",
-      date: "2020-05-23T15:30:00.000Z",
-      id: "78d3611d-5339-4502-99ac-2d5085a9b9f8",
-      userId: "085a9b9f8",
-    },
-  ]);
-  const [response, setResponse] = useState(null);
-  const [session, setSession] = useState(null);
+  const [savedDreams, setSavedDreams] = useState([]);
+  const [response, setResponse] = useState("");
+  const [userSession, setUserSession] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    supabaseClient()
-      .auth.getSession()
-      .then(({ data: { session } }) => {
-        console.log(session);
-        setSession(session);
-      });
-
-    const {
-      data: { subscription },
-    } = supabaseClient().auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
-
-  const userId = session?.user?.id || "";
+  const { session, analysedDreams } = useSupabaseSession();
 
   useEffect(() => {
-    const fetchAnalysedDreams = async () => {
-      const responses = await getUsersDreams(userId);
-      return responses || [];
-    };
-
-    fetchAnalysedDreams().then((analysedDreams) => {
-      console.log("fetchingAnalysedDreams: ", analysedDreams);
-      setAnalysedDreams(sortedAnalysedDreams(analysedDreams));
-    });
-  }, [userId]);
+    session && setUserSession(session);
+    analysedDreams && setSavedDreams(analysedDreams);
+    console.log("Session", session);
+  }, [userSession, analysedDreams]);
 
   const handleSubmit = async (e, query) => {
     e.preventDefault();
     setLoading(true);
     console.log(e, query);
     try {
-      if (apiCallsLeft(analysedDreams, DEFAULT_MAX_API_CALLS) > 0) {
+      if (apiCallsLeft(savedDreams, DEFAULT_MAX_API_CALLS) > 0) {
         const dreamResponse = await analyseDream(query);
         console.log(dreamResponse);
         setResponse(dreamResponse);
@@ -96,8 +64,8 @@ function DreamAnalyser() {
           session,
         });
         await publishAnalysedDream(analysedDream);
-        setAnalysedDreams((prev) => [...prev, analysedDream]);
-        if (apiCallsLeft(analysedDreams, DEFAULT_MAX_API_CALLS) === 1) {
+        setSavedDreams((prev) => [...prev, analysedDream]);
+        if (apiCallsLeft(savedDreams, DEFAULT_MAX_API_CALLS) === 1) {
           alert(`You have one more dream to analyse for today! 1️⃣`);
         }
       } else {
@@ -180,9 +148,10 @@ function DreamAnalyser() {
           disabled={!(loading || response)}
         />
         <RecentlyAnalysedDreams
-          analysedDreams={analysedDreams}
+          dreams={savedDreams}
           title="Recently Analysed Dreams"
           subtitle="Get a glimpse into your subconscious mind with our insightful interpretations."
+          count={6}
         />
         <DreamStats />
         <GetFeedback />

@@ -14,7 +14,6 @@ export function formatDate(dateStr: string) {
 }
 
 export const sortedAnalysedDreams = (analysedDreams: AnalysedDream[]) => {
-  console.log(analysedDreams);
   analysedDreams.sort((a, b) => {
     if (!a.date || !b.date) {
       return 0;

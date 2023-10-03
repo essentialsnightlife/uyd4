@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -29,8 +29,17 @@ import footerRoutes from "src/footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-presentation.jpg";
+import { useSupabaseSession } from "/@//auth/client";
 
 function Home() {
+  const [, setUserSession] = useState(null);
+  const { session } = useSupabaseSession();
+
+  useEffect(() => {
+    setUserSession(session);
+    console.log("HomeSession", session);
+  }, [session]);
+
   return (
     <>
       <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />
