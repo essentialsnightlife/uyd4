@@ -15,6 +15,7 @@ import BasicLayout from "pages/Authentication/components/BasicLayout";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+import PropTypes from "prop-types";
 
 const emailRedirectUrl = import.meta.env.VITE_EMAIL_REDIRECT_URL;
 
@@ -34,18 +35,20 @@ const handleLogin = async (email) => {
   return alert("Success: Please your email and junk folders for the access link!");
 };
 
-function SignInBasic() {
+function SignInBasic({ signUp }) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
-  document.title = "Sign In | UYD";
+  document.title = signUp ? "Sign Up | UYD" : "Sign In | UYD";
+
+  console.log(signUp);
 
   return (
     <BasicLayout image={bgImage}>
       <Card>
         <MKBox variant="gradient" mx={2} pt={4} pb={2} textAlign="center">
           <MKTypography variant="h4" fontWeight="bold">
-            Welcome
+            {signUp ? "Welcome" : "Welcome Back"}
           </MKTypography>
         </MKBox>
         <MKBox pt={0} mb={2} px={3}>
@@ -62,7 +65,8 @@ function SignInBasic() {
           >
             <MKBox mb={1} textAlign="center">
               <MKTypography variant="body2" color="text">
-                Enter your email address to get a magic link to login, no password required.
+                Enter your email address to get the magic link to login
+                {signUp ? ", no password required." : "."}
               </MKTypography>
             </MKBox>
             <MKBox mt={3} mb={2}>
@@ -92,5 +96,9 @@ function SignInBasic() {
     </BasicLayout>
   );
 }
+
+SignInBasic.propTypes = {
+  signUp: PropTypes.bool,
+};
 
 export default SignInBasic;
