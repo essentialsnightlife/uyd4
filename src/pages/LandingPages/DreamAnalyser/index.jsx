@@ -41,6 +41,7 @@ function DreamAnalyser() {
   const [userSession, setUserSession] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  document.title = "Dream Analyser | UYD";
   const { session, analysedDreams } = useSupabaseSession();
 
   useEffect(() => {

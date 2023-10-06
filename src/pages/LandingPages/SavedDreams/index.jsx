@@ -33,6 +33,7 @@ function SavedDreams() {
   const [userSession, setUserSession] = useState(null);
   const [savedDreams, setSavedDreams] = useState([]);
 
+  document.title = "Saved Dreams | UYD";
   const { session, analysedDreams } = useSupabaseSession();
 
   useEffect(() => {

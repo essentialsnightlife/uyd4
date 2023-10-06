@@ -26,6 +26,8 @@ import footerRoutes from "src/footer";
 import bgImage from "assets/images/bg-rental.jpeg";
 
 function GuidesHome() {
+  document.title = "Guides | UYD";
+
   return (
     <>
       <DefaultNavbar routes={routes} brand={"Use Your Dream"} transparent light />

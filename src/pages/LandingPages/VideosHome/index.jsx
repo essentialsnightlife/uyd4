@@ -33,6 +33,8 @@ import footerRoutes from "src/footer";
 import bgImage from "assets/images/bg-rental.jpeg";
 
 function VideosHome() {
+  document.title = "Videos | UYD";
+
   return (
     <>
       <DefaultNavbar routes={routes} brand={"Use Your Dream"} transparent light />

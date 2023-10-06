@@ -35,6 +35,8 @@ function Home() {
   const [, setUserSession] = useState(null);
   const { session } = useSupabaseSession();
 
+  document.title = "Home | UYD";
+
   useEffect(() => {
     setUserSession(session);
     console.log("HomeSession", session);
@@ -42,6 +44,7 @@ function Home() {
 
   return (
     <>
+      <title>Titlle</title>
       <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />
       <MainPageCards />
       <MKBox

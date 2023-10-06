@@ -38,6 +38,8 @@ function SignInBasic() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
+  document.title = "Sign In | UYD";
+
   return (
     <BasicLayout image={bgImage}>
       <Card>
