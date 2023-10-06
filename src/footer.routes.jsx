@@ -10,14 +10,14 @@ import * as React from "react";
 import MKTypography from "components/MKTypography";
 
 // Images
-import logoCT from "assets/images/logo-ct-dark.png";
+// import logo from "assets/images/logo-uyd.png";
 
 const date = new Date().getFullYear();
 
 export default {
   brand: {
     name: "Use Your Dream",
-    image: logoCT,
+    // image: logo,
     route: "/",
   },
   socials: [

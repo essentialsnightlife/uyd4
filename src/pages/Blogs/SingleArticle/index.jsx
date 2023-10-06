@@ -16,7 +16,7 @@ import MKTypography from "components/MKTypography";
 
 // Material Kit 2 PRO React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import DefaultFooter from "examples/Footers/DefaultFooter";
+import DefaultFooter from "components/Footers/DefaultFooter";
 
 // About Us page sections
 import Information from "pages/Blogs/SingleArticle/sections/Information";
