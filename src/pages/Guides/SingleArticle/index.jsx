@@ -35,6 +35,7 @@ import bgImage from "assets/images/bg3.jpg";
 
 function SingleArticle() {
   const headerRef = useRef(null);
+  document.title = "Single Article | Guides | UYD";
 
   // Setting up rellax
   useEffect(() => {
@@ -48,7 +49,7 @@ function SingleArticle() {
   return (
     <>
       <MKBox bgColor="white" py={0.25}>
-        <DefaultNavbar brand="Use Your Dream - Guides" routes={routes} transparent relative />
+        <DefaultNavbar brand="Use Your Dream - Guides" routes={routes} relative />
       </MKBox>
       <MKBox
         ref={headerRef}

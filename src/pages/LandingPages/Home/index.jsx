@@ -44,7 +44,6 @@ function Home() {
 
   return (
     <>
-      <title>Titlle</title>
       <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />
       <MainPageCards />
       <MKBox
