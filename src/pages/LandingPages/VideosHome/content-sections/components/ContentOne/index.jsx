@@ -29,7 +29,7 @@ function ContentOne() {
           <MKBadge
             badgeContent="co-working"
             variant="contained"
-            color="info"
+            color="dark"
             container
             sx={{ mb: 1 }}
           />

@@ -19,7 +19,7 @@ function BlogPostTwo() {
   const actionProps = {
     type: "internal",
     route: "/pages/guides/having-nightmares",
-    color: "info",
+    color: "primary",
     label: "read more",
   };
 

@@ -51,13 +51,13 @@ function ViewVideos() {
             <MKTypography variant="h2" color="white" mb={3}>
               Videos
             </MKTypography>
-            <MKTypography variant="body2" color="white" mb={2} opacity={0.8}>
+            <MKTypography variant="body" color="white" mb={2} opacity={0.8} fontWeight="800">
               Text to add about creating videos here etc We created many examples for pages like
               Signup, Signin, Forgot Password, 2FA Authentification and so on. Just choose between a
               Basic Design, an illustration or a cover!
             </MKTypography>
             <MKBox display="flex" alignItems="center">
-              <MKButton variant="gradient" color="info" sx={{ mt: 3, mb: 2, mr: 1 }}>
+              <MKButton variant="gradient" color="dark" sx={{ mt: 3, mb: 2, mr: 1 }}>
                 view videos
               </MKButton>
               <MKButton variant="text" color="white" sx={{ mt: 3, mb: 2 }}>

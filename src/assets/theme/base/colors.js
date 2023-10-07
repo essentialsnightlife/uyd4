@@ -6,7 +6,7 @@
 
 export default {
   background: {
-    default: "#f0f2f5",
+    default: "#F5EBE0",
   },
 
   text: {
@@ -30,8 +30,8 @@ export default {
   },
 
   primary: {
-    main: "#e91e63",
-    focus: "#e91e63",
+    main: "#E3D5CA",
+    focus: "##CAD8E3",
   },
 
   secondary: {
@@ -83,8 +83,8 @@ export default {
 
   gradients: {
     primary: {
-      main: "#EC407A",
-      state: "#D81B60",
+      main: "#212529",
+      state: "#D5BDAF",
     },
 
     secondary: {
@@ -93,8 +93,8 @@ export default {
     },
 
     info: {
-      main: "#49a3f1",
-      state: "#1A73E8",
+      main: "#C2CCD6",
+      state: "#9d856d",
     },
 
     success: {
@@ -118,7 +118,7 @@ export default {
     },
 
     dark: {
-      main: "#42424a",
+      main: "#D5BDAF",
       state: "#191919",
     },
   },

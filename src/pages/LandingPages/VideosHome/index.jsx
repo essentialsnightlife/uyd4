@@ -73,7 +73,7 @@ function VideosHome() {
             >
               Videos
             </MKTypography>
-            <MKTypography variant="body1" color="white" mt={1}>
+            <MKTypography variant="body3" color="white" mt={1}>
               Add videos text here Make sense of your nighttime experiences with our informative
               guides to popular dreaming themes, helping you unlock the potential in your dream
               world
