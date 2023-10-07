@@ -18,13 +18,10 @@ import MKTypography from "components/MKTypography";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "components/Footers/DefaultFooter";
 
-// About Us page sections
-import Information from "pages/Guides/SingleArticle/sections/Information";
-import Steps from "pages/Guides/SingleArticle/sections/Steps";
-import OurEfforts from "pages/Guides/SingleArticle/sections/OurEfforts";
-import Features from "pages/Guides/SingleArticle/sections/Features";
-import Posts from "pages/Guides/SingleArticle/sections/Posts";
-import Support from "pages/Guides/SingleArticle/sections/Support";
+// Page sections
+import TextTop from "pages/Guides/SpiritualAboutEx/sections/TextTop";
+import BackgroundDivider from "pages/Guides/SpiritualAboutEx/sections/BackgroundDivider";
+import Posts from "pages/Guides/SpiritualAboutEx/sections/Posts";
 
 // Routes
 import routes from "routes";
@@ -33,9 +30,9 @@ import footerRoutes from "src/footer.routes";
 // Images
 import bgImage from "assets/images/bg3.jpg";
 
-function SingleArticle() {
+function SpiritualAboutEx() {
   const headerRef = useRef(null);
-  document.title = "Single Article | Guides | UYD";
+  document.title = "Spiritual Meaning when Dreaming about your Ex | Guides | UYD";
 
   // Setting up rellax
   useEffect(() => {
@@ -78,7 +75,7 @@ function SingleArticle() {
                 },
               })}
             >
-              Dreaming About Your Ex
+              The Spiritual Meaning behind Dreaming about your Ex
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -88,7 +85,7 @@ function SingleArticle() {
               mr={{ xs: 0, sm: 6 }}
               pr={{ xs: 0, sm: 6 }}
             >
-              Why Our Minds Turn to Previous Partners in the Night.
+              Revisiting the soul connections of the past?
             </MKTypography>
           </Grid>
         </Container>
@@ -102,12 +99,9 @@ function SingleArticle() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <Information />
-        <Steps />
-        <OurEfforts />
-        <Features />
+        <TextTop />
+        <BackgroundDivider />
         <Posts />
-        <Support />
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
@@ -116,4 +110,4 @@ function SingleArticle() {
   );
 }
 
-export default SingleArticle;
+export default SpiritualAboutEx;
