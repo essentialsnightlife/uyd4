@@ -19,6 +19,7 @@ import SignInBasicPage from "src/layouts/authentication/sign-in/basic";
 import SignUpPage from "layouts/authentication/sign-in/basic/sign-up-page";
 import TeethFallingOut from "pages/Guides/TeethFallingOut";
 import SpiritualAboutEx from "pages/Guides/SpiritualAboutEx";
+import LucidDreams from "pages/Guides/LucidDreams";
 // import ResetPasswordPage from "src/layouts/authentication/reset-password/cover";
 
 const routes = [
@@ -83,6 +84,11 @@ const routes = [
         name: "dreaming about your ex",
         route: "/guides/dreaming-about-your-ex",
         component: <AboutEx />,
+      },
+      {
+        name: "lucid dreams intro",
+        route: "/guides/lucid-dreams-meaning",
+        component: <LucidDreams />,
       },
       {
         name: "spiritual meaning: teeth falling out",
