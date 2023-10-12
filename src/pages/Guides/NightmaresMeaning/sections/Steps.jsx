@@ -37,33 +37,33 @@ function Steps() {
       image:
         "https://images.unsplash.com/photo-1609365635346-524d0024684f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
       label: "Positives",
-      title: "Insecurity & Anxiety",
+      title: "Problem-solving and Preparedness",
       description:
-        "If you feel insecure about our appearance, it can manifest as teeth falling out in a dream.",
+        "Nightmares can serve as a way for our minds to explore worst-case scenarios or potential dangers.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1602781975725-cab34bd38d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
       label: "Challenges",
-      title: "Loss of Power",
+      title: "Processing Difficult Experiences",
       description:
-        "Teeth can be seen as a sign of strength and power, so if we feel like we are losing power in our lives, our subconscious may manifest it as teeth falling out in a dream.",
+        "Nightmares can also be a way for us to process difficult events or experiences that we have had in our lives.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
       label: "Neutral",
-      title: "Fear of Aging",
+      title: "Unresolved Emotions",
       description:
-        "Some continue to cling to their youth and resist the inevitable aging process. In this case, the dream of teeth falling out could be an expression of this fear.",
+        "Nightmares can often be a reflection of our innermost fears and anxieties. When we dream, our unconscious mind is able to bring out our repressed emotions and unresolved issues.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
-      label: "Neutral",
-      title: "Loss of Economic Security",
+      label: "Positives",
+      title: "Warning Signs",
       description:
-        "In many cultures teeth are seen as a symbol of wealth and prosperity. If we feel like we are losing our financial security, or are unable to provide, this can manifest as teeth falling out in a dream.",
+        "Nightmares can also be a warning sign that something substantial needs to change in our lives.",
     },
   ];
 

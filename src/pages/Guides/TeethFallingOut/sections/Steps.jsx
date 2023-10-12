@@ -37,32 +37,33 @@ function Steps() {
       image:
         "https://images.unsplash.com/photo-1609365635346-524d0024684f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
       label: "Positives",
-      title: "Personal Exploration",
+      title: "Growth",
       description:
-        "The dreamer can explore their dream world and gain understanding of their own thoughts and feelings.",
+        "Teeth falling out symbolize significant change and personal growth, indicating a transition or transformation in life.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1602781975725-cab34bd38d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
       label: "Positives",
-      title: "Creative Solutions",
+      title: "Destress",
       description:
-        "Lucid dreaming can also be used to come up with creative solutions to problems that the dreamer is dealing with in their waking life.",
+        "Dreams of teeth falling out provide an outlet for releasing stress and anxiety, helping cope with and confront concerns.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
-      label: "Positives",
-      title: "Trauma Processing",
+      label: "Challenges",
+      title: "Insecurity & Anxiety",
       description:
-        "SStudies have shown that lucid dreaming can help people process traumatic experiences and work through difficult emotions.",
+        "Teeth's connection to personal identity can manifest as dreams of teeth falling out if we feel insecure about ourselves.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
-      label: "Positives",
-      title: "Enhanced Memory",
-      description: "Lucid dreaming has also been shown to improve memory and reduce stress.",
+      label: "Challenges",
+      title: "Loss of Power",
+      description:
+        "Dreams of teeth falling out symbolize the fear of losing control, reflecting our subconscious longing for strength and influence.",
     },
   ];
 
@@ -97,7 +98,7 @@ function Steps() {
   };
 
   return (
-    <MKBox component="section" py={8} position="relative">
+    <MKBox component="section" py={4} position="relative">
       <Container>
         <Swiper
           onInit={(swiper) => {

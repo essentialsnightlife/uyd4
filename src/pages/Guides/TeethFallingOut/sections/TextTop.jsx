@@ -23,27 +23,51 @@ function TextTop() {
             TLDR
           </MKTypography>
           <MKTypography variant="h3" mb={3}>
-            Lucid dreaming is a phenomenon in which the dreamer is aware that they are dreaming, and
-            is able to control their actions while they dream.
+            Dreams of teeth falling out evoke diverse interpretations: insecurity, loss of control,
+            aging fears, but can carry positive meanings.
+          </MKTypography>
+          <MKTypography variant="body2" mb={6}>
+            Teeth falling out is often seen as a symbol of transition or transformation in dream
+            analysis. It can indicate that you are going through a significant change or entering a
+            new phase in your life. This can be seen as a positive sign of personal growth and
+            development.
+          </MKTypography>
+          <MKTypography variant="h5" mb={3}>
+            Release of anxiety
+          </MKTypography>
+          <MKTypography variant="body2" mb={3}>
+            Dreams about teeth falling out can serve as a subconscious way to release stress or
+            anxiety. By manifesting these fears in the dream world, it can help you cope with and
+            address these concerns in your waking life.
+          </MKTypography>
+          <MKTypography variant="h5" mb={3}>
+            Sense of renewal
+          </MKTypography>
+          <MKTypography variant="body2" mb={3}>
+            Losing teeth in a dream may represent the shedding of old and outdated aspects of
+            yourself. It can be a sign that you are letting go of negative habits, toxic
+            relationships, or outdated beliefs, allowing yourself to start afresh and make positive
+            changes.
+          </MKTypography>
+          <MKTypography variant="h5" mb={3}>
+            Communication and expression
+          </MKTypography>
+          <MKTypography variant="body2" mb={3}>
+            Teeth are essential for speaking and expressing ourselves. Dreams about teeth falling
+            out may indicate a desire to improve communication or express yourself more effectively.
+            It can encourage you to find your voice and speak up more confidently.
+          </MKTypography>
+          <MKTypography variant="body2" mb={3}>
+            Whilst most of us are accustomed to dreaming of events that take place in our lives or
+            in our imaginations, sometimes our dreams become more surreal with symbolic images, such
+            as teeth falling out, that can be harder to interpret.
+          </MKTypography>
+          <MKTypography variant="h5" mb={3}>
+            Insecurity & Anxiety
           </MKTypography>
           <MKTypography variant="body2">
-            When a person is in a lucid dream state, they are in a state of heightened awareness.
-            They are able to observe their dream world from a detached perspective, and are
-            sometimes even able to influence their dreams and control their actions within the
-            dream. This can be a powerful experience, as the dreamer is able to explore the
-            dreamscape and interact with the environment in ways that they would not be able to do
-            while awake.
-            <br /> <br />
-            One explanation for dreaming about an ex is that it can be a reflection of unresolved
-            emotions or issues. If a person is still harboring feelings of guilt, regret, or sadness
-            about their relationship, they may have dreams about their ex as a way of processing
-            these emotions. It can also be a sign that the person is still coming to terms with the
-            breakup and trying to make sense of what happened.
-            <br /> <br />
-            Lucid dreaming has become a popular topic of research for psychologists and sleep
-            experts. Studies have shown that lucid dreaming can help people work through and process
-            traumatic experiences, and can even continue to work on issues that a person is
-            currently dealing with in their waking life.
+            Teeth are closely associated with our sense of identity, so if we feel insecure about
+            our appearance, it can manifest as teeth falling out in a dream.
           </MKTypography>
         </Grid>
       </Container>

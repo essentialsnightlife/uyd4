@@ -89,6 +89,8 @@ function Home() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
+        <img src="https://source.unsplash.com/lbmrrNgq2lo" alt="" width="300" />
+        <img src="https://source.unsplash.com/BCuxVP5WEsU" alt="" width="300" />
         <ViewVideos />
         <DreamsOverview />
         <GetFeedback />

@@ -19,11 +19,11 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "components/Footers/DefaultFooter";
 
 // About Us page sections
-import TextTop from "pages/Guides/LucidDreams/sections/TextTop";
-import Steps from "pages/Guides/LucidDreams/sections/Steps";
-import BackgroundDivider from "pages/Guides/LucidDreams/sections/BackgroundDivider";
-import Posts from "pages/Guides/LucidDreams/sections/Posts";
-import TextBottom from "pages/Guides/LucidDreams/sections/TextBottom";
+import TextTop from "pages/Guides/DeathRelatedDreams/sections/TextTop";
+import Steps from "pages/Guides/DeathRelatedDreams/sections/Steps";
+import BackgroundDivider from "pages/Guides/DeathRelatedDreams/sections/BackgroundDivider";
+import Posts from "pages/Guides/DeathRelatedDreams/sections/Posts";
+import TextBottom from "pages/Guides/DeathRelatedDreams/sections/TextBottom";
 
 // Routes
 import routes from "routes";
@@ -32,9 +32,9 @@ import footerRoutes from "src/footer.routes";
 // Images
 import bgImage from "assets/images/bg3.jpg";
 
-function LucidDreams() {
+function DeathRelatedDreams() {
   const headerRef = useRef(null);
-  document.title = "Lucid Dreams Intro | Guides | UYD";
+  document.title = "Dreaming about Death | Guides | UYD";
 
   // Setting up rellax
   useEffect(() => {
@@ -77,17 +77,7 @@ function LucidDreams() {
                 },
               })}
             >
-              Lucid Dreams
-            </MKTypography>
-            <MKTypography
-              variant="body1"
-              color="white"
-              opacity={0.8}
-              mb={2}
-              mr={{ xs: 0, sm: 6 }}
-              pr={{ xs: 0, sm: 6 }}
-            >
-              Intro
+              Dreaming about Death
             </MKTypography>
           </Grid>
         </Container>
@@ -114,4 +104,4 @@ function LucidDreams() {
   );
 }
 
-export default LucidDreams;
+export default DeathRelatedDreams;

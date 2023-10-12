@@ -13,35 +13,34 @@ function TextBottom() {
     <MKBox component="section" py={6} mt={6}>
       <Container>
         <Grid container spacing={3} item xs={12} lg={8} mx="auto">
+          <MKTypography variant="h5" mb={3}>
+            Loss of Power
+          </MKTypography>
+          <MKTypography variant="body2" mb={6}>
+            Teeth can be seen as a sign of strength and power, so if we feel like we are losing
+            power in our lives, our subconscious may manifest it as teeth falling out in a dream.
+          </MKTypography>
+          <MKTypography variant="h5" mb={3}>
+            Fear of Aging
+          </MKTypography>
+          <MKTypography variant="body2" mb={3}>
+            Teeth can be seen as a sign of strength and power, so if we feel like we are losing
+            power in our lives, our subconscious may manifest it as teeth falling out in a dream.
+          </MKTypography>
+          <MKTypography variant="h5" mb={3}>
+            Loss of Economic Security
+          </MKTypography>
+          <MKTypography variant="body2" mb={3}>
+            In many cultures, teeth are seen as a symbol of wealth and prosperity. Thus, if we feel
+            like we are losing our financial security or are unable to provide for ourselves and our
+            families, this fear can manifest as teeth falling out in a dream.
+          </MKTypography>
           <MKTypography variant="body2">
-            Third, the dream of teeth falling out can also represent a fear of aging. Some continue
-            to cling to their youth and resist the inevitable aging process. In this case, the dream
-            of teeth falling out could be an expression of this fear.
-            <br /> <br />
-            Finally, the dream of teeth falling out can also represent the loss of economic
-            security. In many cultures, teeth are seen as a symbol of wealth and prosperity. Thus,
-            if we feel like we are losing our financial security or are unable to provide for
-            ourselves and our families, this fear can manifest as teeth falling out in a dream.
-            <br /> <br />
-            Tackling insecurities, particularly those related to feeling insecure about something or
-            experiencing a loss of power, is crucial for personal growth and well-being. When we
-            allow these insecurities to persist, they can significantly impact our self-confidence
-            and self-esteem.
-            <br /> <br />
-            By facing and addressing these insecurities head-on, we can boost our self-confidence,
-            develop a positive self-image, and regain a sense of empowerment. Overcoming
-            insecurities allows us to be more authentic and accepting of ourselves, leading to
-            deeper connections with others and a greater sense of belonging.
-            <br /> <br />
-            Additionally, tackling insecurities helps us overcome limiting beliefs and negative
-            thought patterns that may be holding us back from reaching our full potential. By
-            challenging these insecurities, we can break free from self-imposed limitations and open
-            ourselves up to new opportunities, growth, and fulfillment.
-            <br /> <br />
-            In conclusion, teeth falling out in a dream can have many causes. Most commonly, it is a
-            sign of insecurity, a fear of losing power, a fear of aging, or a fear of economic
-            insecurity. No matter the cause, it is important to understand the symbolism behind this
-            dream symbol and use it to work through whatever emotions may be causing it.
+            If you’ve had a dream where your teeth are falling out, it is worth considering what
+            underlying emotions or insecurities may be causing it. Take some time to reflect on what
+            this information might mean to you and how it might be related to your life. This
+            reflection can be a powerful tool for understanding our subconscious and addressing the
+            underlying issues that are causing these types of dreams.
           </MKTypography>
         </Grid>
       </Container>

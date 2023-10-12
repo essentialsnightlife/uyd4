@@ -38,35 +38,36 @@ function TextTop() {
             <MKTypography variant="h4" mb={2}>
               Positives
             </MKTypography>
-            <br />
             <MKTypography variant="h5" mb={2}>
               Personal Growth
             </MKTypography>
-            <br />
             Recurring dreams that depict personal growth or progress can signify a positive and
             ongoing transformation in your life. These dreams may reflect your journey toward
             self-improvement, increased self-awareness, and a desire to reach your full potential.
+            <br />
+            <br />
             <MKTypography variant="h5" mb={2}>
               Manifestation of Goals
             </MKTypography>
-            <br />
             Positive recurring dreams can sometimes represent the manifestation of your goals and
             desires. These dreams may indicate that you are moving closer to achieving what you
             desire in your waking life. They can serve as a reminder to stay focused, motivated, and
             optimistic about your aspirations.
+            <br />
+            <br />
             <MKTypography variant="h5" mb={2}>
               Symbolic Messages
             </MKTypography>
-            <br />
             Recurring dreams often contain symbolic messages that reflect your subconscious
             thoughts, emotions, or conflicts. Positive recurring dreams may carry empowering
             messages, such as encouragement, inner strength, or reminders of your innate potentials.
             These dreams can provide a sense of reassurance, hope, and guidance in navigating
             challenges and pursuing your passions.
+            <br />
+            <br />
             <MKTypography variant="h5" mb={2}>
               Emotional Healing
             </MKTypography>
-            <br />
             Some recurring dreams may symbolize ongoing emotional healing or resolution of past
             wounds. These dreams can indicate that you are actively working through and transcending
             emotional pain or trauma, leading to greater personal well-being, inner peace, and

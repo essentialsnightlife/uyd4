@@ -36,34 +36,26 @@ function Steps() {
     {
       image:
         "https://images.unsplash.com/photo-1609365635346-524d0024684f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
-      label: "Positives",
-      title: "Insecurity & Anxiety",
+      label: "Challenges",
+      title: "Unresolved Issues",
       description:
-        "If you feel insecure about our appearance, it can manifest as teeth falling out in a dream.",
+        "Dreams about snakes may be a sign that a person is struggling with a difficult situation or emotion in their life. It could be a sign that the person is feeling overwhelmed, threatened, or anxious about something.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1602781975725-cab34bd38d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
-      label: "Challenges",
-      title: "Loss of Power",
+      label: "Positives",
+      title: "Transformation",
       description:
-        "Teeth can be seen as a sign of strength and power, so if we feel like we are losing power in our lives, our subconscious may manifest it as teeth falling out in a dream.",
+        "Snakes are often seen as symbols of transformation and rebirth, so dreaming about them could be a sign that the person is going through a period of change or transition in their life.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
-      label: "Neutral",
-      title: "Fear of Aging",
+      label: "Positives",
+      title: "Intuition",
       description:
-        "Some continue to cling to their youth and resist the inevitable aging process. In this case, the dream of teeth falling out could be an expression of this fear.",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
-      label: "Neutral",
-      title: "Loss of Economic Security",
-      description:
-        "In many cultures teeth are seen as a symbol of wealth and prosperity. If we feel like we are losing our financial security, or are unable to provide, this can manifest as teeth falling out in a dream.",
+        "Snakes are often seen as symbols of intuition and inner wisdom, so dreaming about them could be a sign that the person is receiving messages from their unconscious mind.",
     },
   ];
 
@@ -79,10 +71,6 @@ function Steps() {
     {
       number: "03",
       label: slides[2].title,
-    },
-    {
-      number: "04",
-      label: slides[3].title,
     },
   ];
 

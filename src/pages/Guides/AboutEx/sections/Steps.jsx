@@ -86,7 +86,7 @@ function Steps() {
   };
 
   return (
-    <MKBox component="section" py={8} position="relative">
+    <MKBox component="section" py={4} position="relative">
       <Container>
         <Swiper
           onInit={(swiper) => {

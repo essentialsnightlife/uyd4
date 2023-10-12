@@ -14,8 +14,6 @@ function TextBottom() {
       <Container>
         <Grid container spacing={3} item xs={12} lg={8} mx="auto">
           <MKTypography variant="body2">
-            Lucid dreaming in modern culture:
-            <br /> <br />
             Recurring dreams can be a sign that there is something unresolved or unaddressed in our
             lives. They can be a sign that we are avoiding something or that there is something we
             are not facing up to. The dream can be a reminder to take the time to reflect on what

@@ -19,11 +19,11 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "components/Footers/DefaultFooter";
 
 // About Us page sections
-import TextTop from "pages/Guides/LucidDreams/sections/TextTop";
-import Steps from "pages/Guides/LucidDreams/sections/Steps";
-import BackgroundDivider from "pages/Guides/LucidDreams/sections/BackgroundDivider";
-import Posts from "pages/Guides/LucidDreams/sections/Posts";
-import TextBottom from "pages/Guides/LucidDreams/sections/TextBottom";
+import TextTop from "pages/Guides/SnakeDreams/sections/TextTop";
+import Steps from "pages/Guides/SnakeDreams/sections/Steps";
+import BackgroundDivider from "pages/Guides/SnakeDreams/sections/BackgroundDivider";
+import Posts from "pages/Guides/SnakeDreams/sections/Posts";
+import TextBottom from "pages/Guides/SnakeDreams/sections/TextBottom";
 
 // Routes
 import routes from "routes";
@@ -32,9 +32,9 @@ import footerRoutes from "src/footer.routes";
 // Images
 import bgImage from "assets/images/bg3.jpg";
 
-function LucidDreams() {
+function SnakeDreams() {
   const headerRef = useRef(null);
-  document.title = "Lucid Dreams Intro | Guides | UYD";
+  document.title = "Nightmares Explained | Guides | UYD";
 
   // Setting up rellax
   useEffect(() => {
@@ -77,7 +77,7 @@ function LucidDreams() {
                 },
               })}
             >
-              Lucid Dreams
+              Dreaming about snakes
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -87,7 +87,7 @@ function LucidDreams() {
               mr={{ xs: 0, sm: 6 }}
               pr={{ xs: 0, sm: 6 }}
             >
-              Intro
+              A key symbol from modern and ancient cultures
             </MKTypography>
           </Grid>
         </Container>
@@ -114,4 +114,4 @@ function LucidDreams() {
   );
 }
 
-export default LucidDreams;
+export default SnakeDreams;

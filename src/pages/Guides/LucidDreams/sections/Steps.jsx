@@ -37,33 +37,32 @@ function Steps() {
       image:
         "https://images.unsplash.com/photo-1609365635346-524d0024684f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
       label: "Positives",
-      title: "Personal Growth",
+      title: "Personal Exploration",
       description:
-        "These dreams may reflect your journey toward self-improvement, increased self-awareness, and a desire to reach your full potential.",
+        "The dreamer can explore their dream world and gain understanding of their own thoughts and feelings.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1602781975725-cab34bd38d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
       label: "Positives",
-      title: "Manifestation of Goals",
+      title: "Creative Solutions",
       description:
-        " These dreams may indicate that you are moving closer to achieving what you desire in your waking life.",
+        "Lucid dreaming can also be used to come up with creative solutions to problems that the dreamer is dealing with in their waking life.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
       label: "Positives",
-      title: "Symbolic Messages",
+      title: "Trauma Processing",
       description:
-        "Recurring dreams often contain symbolic messages that reflect your subconscious thoughts, emotions, or conflicts.",
+        "Studies have shown that lucid dreaming can help people process traumatic experiences and work through difficult emotions.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
       label: "Positives",
-      title: "Emotional Healing",
-      description:
-        "Some recurring dreams may symbolize ongoing emotional healing or resolution of past wounds.",
+      title: "Enhanced Memory",
+      description: "Lucid dreaming has also been shown to improve memory and reduce stress",
     },
   ];
 
@@ -98,7 +97,7 @@ function Steps() {
   };
 
   return (
-    <MKBox component="section" py={8} position="relative">
+    <MKBox component="section" py={4} position="relative">
       <Container>
         <Swiper
           onInit={(swiper) => {
