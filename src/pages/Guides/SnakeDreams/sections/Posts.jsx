@@ -15,9 +15,6 @@ import DefaultBlogCard from "examples/Cards/BlogCards/DefaultBlogCard";
 import post1 from "assets/images/examples/color2.jpg";
 import post2 from "assets/images/examples/color3.jpg";
 import post3 from "assets/images/examples/color1.jpg";
-import author1 from "assets/images/team-2.jpg";
-import author2 from "assets/images/ivana-squares.jpg";
-import author3 from "assets/images/marie.jpg";
 
 function Posts() {
   return (
@@ -26,53 +23,37 @@ function Posts() {
         <Grid container spacing={3}>
           <Grid item xs={9} textAlign="center" mx="auto">
             <MKTypography variant="h3" mb={0.5}>
-              See other articles
+              Featured articles
             </MKTypography>
             <MKTypography variant="body2" color="text" px={{ xs: 0, md: 6 }} mb={4}>
-              Create a unique and beautiful blog posts. You can also connect your blog directly to
-              Google Analytics to have a more detailed look.
+              Dive into our curated guides, offering insights on various popular dreaming topics.
             </MKTypography>
           </Grid>
           <Grid item xs={12} lg={4} mb={{ xs: 3, lg: 0 }}>
             <DefaultBlogCard
               image={post1}
-              category={{ color: "primary", label: "house" }}
-              title="Shared Coworking"
-              description="Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons."
-              author={{
-                image: author1,
-                name: "Mathew Glock",
-                date: "Posted on 28 February",
-              }}
-              action={{ type: "internal", route: "/pages/blogs/single-article" }}
+              category={{ color: "primary", label: "popular" }}
+              title="Dreaming About Your Ex"
+              action={{ type: "internal", route: "/guides/lucid-dreams-meaning" }}
+              description="Dreaming about an ex can hold spiritual significance, signaling unresolved emotions or unfinished matters..."
             />
           </Grid>
           <Grid item xs={12} lg={4} mb={{ xs: 3, lg: 0 }}>
             <DefaultBlogCard
               image={post2}
-              category={{ color: "info", label: "house" }}
-              title="Really Housekeeping"
-              description="Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons."
-              author={{
-                image: author2,
-                name: "Mathew Glock",
-                date: "Posted on 28 February",
-              }}
-              action={{ type: "internal", route: "/pages/blogs/single-article" }}
+              category={{ color: "info", label: "intro" }}
+              title="Lucid Dreams: Intro"
+              description="Lucid dreaming occurs when a dreamer is aware that they are dreaming, and is able to control their actions..."
+              action={{ type: "internal", route: "/guides/dreaming-about-your-ex" }}
             />
           </Grid>
           <Grid item xs={12} lg={4} mb={{ xs: 3, lg: 0 }}>
             <DefaultBlogCard
               image={post3}
-              category={{ color: "warning", label: "house" }}
-              title="Shared Coworking"
-              description="Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons."
-              author={{
-                image: author3,
-                name: "Mathew Glock",
-                date: "Posted on 28 February",
-              }}
-              action={{ type: "internal", route: "/pages/blogs/single-article" }}
+              category={{ color: "warning", label: "popular" }}
+              title="Teeth Falling Out"
+              description="Teeth falling out is often seen as a symbol of transition or transformation in dream analysis. It can indicate..."
+              action={{ type: "internal", route: "/guides/teeth-falling-out" }}
             />
           </Grid>
         </Grid>
