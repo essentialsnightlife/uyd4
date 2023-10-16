@@ -15,7 +15,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-function CenteredBlogCard({ image, title, description, action }) {
+function CenteredBlogCard({ image, title, description, action, width, height }) {
   return (
     <Card>
       <MKBox position="relative" borderRadius="lg" mx={2} mt={-3}>
@@ -31,8 +31,8 @@ function CenteredBlogCard({ image, title, description, action }) {
         <MKBox
           borderRadius="lg"
           shadow="md"
-          width="100%"
-          height="100%"
+          width={width ? width : "100%"}
+          height={height ? height : "100%"}
           position="absolute"
           left={0}
           top={0}
@@ -86,6 +86,8 @@ CenteredBlogCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
+  height: PropTypes.string.isRequired,
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]).isRequired,
     route: PropTypes.string.isRequired,
@@ -101,6 +103,12 @@ CenteredBlogCard.propTypes = {
     ]),
     label: PropTypes.string.isRequired,
   }).isRequired,
+};
+
+//props default values
+CenteredBlogCard.defaultProps = {
+  width: 300,
+  height: 300,
 };
 
 export default CenteredBlogCard;
