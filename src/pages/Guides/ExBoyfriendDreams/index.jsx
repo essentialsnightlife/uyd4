@@ -34,7 +34,7 @@ import bgImage from "assets/images/bg3.jpg";
 
 function ExBoyfriendDreams() {
   const headerRef = useRef(null);
-  document.title = "Nightmares Explained | Guides | UYD";
+  document.title = "Ex Boyfriend Dreams Explained | Guides | UYD";
 
   // Setting up rellax
   useEffect(() => {
