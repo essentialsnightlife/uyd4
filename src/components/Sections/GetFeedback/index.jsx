@@ -39,7 +39,7 @@ function GetFeedback() {
           </Grid>
           <Grid item xs={12} md={5} sx={{ ml: "auto" }}>
             <MKBox position="relative">
-              <MKBox component="img" src={feedbackImage} alt="macbook" width="100%" />
+              <MKBox component="img" src={feedbackImage} width="100%" />
             </MKBox>
           </Grid>
         </Grid>
