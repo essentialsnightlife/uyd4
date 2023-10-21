@@ -46,7 +46,7 @@ export function formatterAnalysedDream({
   session: Session | null;
 }): AnalysedDream {
   return {
-    id: "UYD" + Date.now() + String(Math.floor(Math.random() * 100) + 1),
+    id: "UYD" + String(Math.floor(Math.random() * 100) + 1) + String(Date.now()).substring(0, 8),
     userId: session?.user.id,
     query,
     response: analysedDream,
