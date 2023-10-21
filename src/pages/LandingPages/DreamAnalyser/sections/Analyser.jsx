@@ -21,6 +21,7 @@ function Analyser({ analyser, context, onSubmit }) {
               <DreamAnalyserCard
                 analyser={analyser}
                 context={context}
+                onChange={analyser.onChange}
                 action={{
                   type: "internal",
                   color: "info",

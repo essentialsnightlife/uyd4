@@ -1,4 +1,4 @@
-import { OpenAIApi } from "openai";
+import { OpenAI } from "openai";
 
 import { BOT_INSTRUCTIONS } from "../../../src/constants";
 
@@ -16,13 +16,13 @@ export const promptGenerator = (question: string) => {
 };
 
 export const sendAIQuestion = async ({ model, prompt, temperature, max_tokens }: AIQuestion) => {
-  const openai = new OpenAIApi(config);
-  const completion = await openai.createCompletion({
-    model: model,
+  const openai = new OpenAI();
+  const completion = await openai.completions.create({
     prompt: prompt,
-    temperature: temperature,
     max_tokens: max_tokens,
+    temperature: temperature,
+    model: model,
   });
 
-  return completion.data.choices[0].text;
+  return completion.choices[0];
 };

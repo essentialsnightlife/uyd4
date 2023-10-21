@@ -30,12 +30,13 @@ import AnalyserResponse from "pages/LandingPages/DreamAnalyser/sections/Analyser
 
 // Functions & Helpers
 import { analyseDream, publishAnalysedDream } from "/@//apis";
-import { apiCallsLeft, formatterAnalysedDream } from "/@//helpers";
-import { DEFAULT_MAX_API_CALLS } from "/@//constants";
+import { apiCallsLeft, formatQuery, formatterAnalysedDream } from "/@//helpers";
+import { ANALYSER_INPUT_MAX_CHARS, DEFAULT_MAX_API_CALLS } from "/@//constants";
 import { useSupabaseSession } from "/@//auth/client";
 
 function DreamAnalyser() {
   const [query, setQuery] = useState("");
+  const [context, setContext] = useState("");
   const [savedDreams, setSavedDreams] = useState([]);
   const [response, setResponse] = useState("");
   const [userSession, setUserSession] = useState(null);
@@ -50,13 +51,14 @@ function DreamAnalyser() {
     console.log("Session", session);
   }, [userSession, analysedDreams]);
 
-  const handleSubmit = async (e, query) => {
+  const handleSubmit = async (e, analyser, context) => {
     e.preventDefault();
     setLoading(true);
-    console.log(e, query);
+    // validate 10 chars each
     try {
       if (apiCallsLeft(savedDreams, DEFAULT_MAX_API_CALLS) > 0) {
-        const dreamResponse = await analyseDream(query);
+        const formattedQuery = formatQuery(analyser.value, context.value);
+        const dreamResponse = await analyseDream(formattedQuery);
         console.log(dreamResponse);
         setResponse(dreamResponse);
         const analysedDream = formatterAnalysedDream({
@@ -64,7 +66,7 @@ function DreamAnalyser() {
           analysedDream: dreamResponse,
           session,
         });
-        await publishAnalysedDream(analysedDream);
+        // await publishAnalysedDream(analysedDream);
         setSavedDreams((prev) => [...prev, analysedDream]);
         if (apiCallsLeft(savedDreams, DEFAULT_MAX_API_CALLS) === 1) {
           alert(`You have one more dream to analyse for today! 1️⃣`);
@@ -137,8 +139,22 @@ function DreamAnalyser() {
         }}
       >
         <Analyser
-          query={query}
-          setQuery={setQuery}
+          analyser={{
+            title: "tell us about your dream",
+            rows: 3,
+            maxLength: ANALYSER_INPUT_MAX_CHARS,
+            value: query,
+            placeholderText: "I was flying in the sky and then I fell down and after...",
+            onChange: (e) => setQuery(e.target.value),
+          }}
+          context={{
+            title: "Add Context here",
+            maxLength: 300,
+            placeholderText: "Context placeholder text",
+            onChange: (e) => setContext(e.target.value),
+            value: context,
+            rows: 2,
+          }}
           onSubmit={handleSubmit}
           placeholderText="I was flying in the sky and then I fell down and after.. "
         />
