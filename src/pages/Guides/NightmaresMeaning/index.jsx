@@ -31,6 +31,7 @@ import footerRoutes from "src/footer.routes";
 
 // Images
 import bgImage from "assets/images/bg3.jpg";
+import PromoDreamAnalyser from "components/Sections/PromoDreamAnalyser";
 
 function NightmaresMeaning() {
   const headerRef = useRef(null);
@@ -104,6 +105,7 @@ function NightmaresMeaning() {
         <TextTop />
         <Steps />
         <TextBottom />
+        <PromoDreamAnalyser />
         <BackgroundDivider />
         <Posts />
       </Card>

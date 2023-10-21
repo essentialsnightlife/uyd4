@@ -29,6 +29,7 @@ import footerRoutes from "src/footer.routes";
 
 // Images
 import bgImage from "assets/images/bg3.jpg";
+import PromoDreamAnalyser from "components/Sections/PromoDreamAnalyser";
 
 function SpiritualAboutEx() {
   const headerRef = useRef(null);
@@ -100,6 +101,7 @@ function SpiritualAboutEx() {
         }}
       >
         <TextTop />
+        <PromoDreamAnalyser />
         <BackgroundDivider />
         <Posts />
       </Card>

@@ -31,6 +31,7 @@ import footerRoutes from "src/footer.routes";
 
 // Images
 import bgImage from "assets/images/bg3.jpg";
+import PromoDreamAnalyser from "components/Sections/PromoDreamAnalyser";
 
 function RecurringDreams() {
   const headerRef = useRef(null);
@@ -104,6 +105,7 @@ function RecurringDreams() {
         <TextTop />
         <Steps />
         <TextBottom />
+        <PromoDreamAnalyser />
         <BackgroundDivider />
         <Posts />
       </Card>

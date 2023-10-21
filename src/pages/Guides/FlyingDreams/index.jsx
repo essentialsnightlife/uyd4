@@ -31,6 +31,7 @@ import footerRoutes from "src/footer.routes";
 
 // Images
 import bgImage from "assets/images/bg3.jpg";
+import PromoDreamAnalyser from "components/Sections/PromoDreamAnalyser";
 
 function FlyingDreams() {
   const headerRef = useRef(null);
@@ -94,6 +95,7 @@ function FlyingDreams() {
         <TextTop />
         <Steps />
         <TextBottom />
+        <PromoDreamAnalyser />
         <BackgroundDivider />
         <Posts />
       </Card>

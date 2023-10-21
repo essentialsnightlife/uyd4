@@ -31,6 +31,7 @@ import footerRoutes from "src/footer.routes";
 // Images
 import bgImage from "assets/images/bg3.jpg";
 import TextBottom from "pages/Guides/AboutEx/sections/TextBottom";
+import PromoDreamAnalyser from "components/Sections/PromoDreamAnalyser";
 
 function AboutEx() {
   const headerRef = useRef(null);
@@ -104,6 +105,7 @@ function AboutEx() {
         <TextTop />
         <Steps />
         <TextBottom />
+        <PromoDreamAnalyser />
         <BackgroundDivider />
         <Posts />
       </Card>

@@ -31,6 +31,7 @@ import footerRoutes from "src/footer.routes";
 // Images
 import bgImage from "assets/images/bg3.jpg";
 import TextBottom from "pages/Guides/TeethFallingOut/sections/TextBottom";
+import PromoDreamAnalyser from "components/Sections/PromoDreamAnalyser";
 
 function TeethFallingOut() {
   const headerRef = useRef(null);
@@ -104,6 +105,7 @@ function TeethFallingOut() {
         <TextTop />
         <Steps />
         <TextBottom />
+        <PromoDreamAnalyser />
         <BackgroundDivider />
         <Posts />
       </Card>
