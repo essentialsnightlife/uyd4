@@ -12,7 +12,7 @@ import DreamAnalyser from "pages/LandingPages/DreamAnalyser";
 import SavedDreams from "pages/LandingPages/SavedDreams";
 import GuidesHome from "pages/LandingPages/GuidesHome";
 import Home from "pages/LandingPages/Home";
-import VideosHome from "pages/LandingPages/VideosHome";
+// import VideosHome from "pages/LandingPages/VideosHome";
 
 // Account
 import SignInBasicPage from "src/layouts/authentication/sign-in/basic";
@@ -53,11 +53,11 @@ const routes = [
             route: "/saved-dreams",
             component: <SavedDreams />,
           },
-          {
-            name: "videos",
-            route: "/videos",
-            component: <VideosHome />,
-          },
+          // {
+          //   name: "videos",
+          //   route: "/videos",
+          //   component: <VideosHome />,
+          // },
           {
             name: "guides",
             route: "/guides",
