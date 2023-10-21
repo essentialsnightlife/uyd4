@@ -1,11 +1,12 @@
 service: uyd
+app: uyd2
+org: eds101
 useDotenv: true
 
 provider:
   name: aws
   runtime: nodejs14.x
   region: eu-west-2
-  lambdaHashingVersion: 20201221
   iam:
     role:
       statements:
@@ -36,27 +37,27 @@ provider:
         - https://uyd.vercel.app/
 
 functions:
-  save-analysed-dream:
-    handler: src/lambdas/analysedDreams/functions/handler.save
+  savee-analysed-dream:
+    handler: lambdas/analysedDreams/functions/handler.save
     events:
       - sns: AnsweredQueryTopic
 
   dream-analyser:
-    handler: src/lambdas/ai/functions/handler.analyser
+    handler: lambdas/ai/functions/handler.analyser
     events:
       - httpApi:
           path: /dreams/analyse
           method: POST
 
   del-analysed-dreams:
-    handler: src/lambdas/analysedDreams/functions/handler.del
+    handler: lambdas/analysedDreams/functions/handler.del
     events:
       - httpApi:
           path: /dreams/{id}
           method: DELETE
 
   get-user-analysed-dreams:
-    handler: src/lambdas/analysedDreams/functions/handler.getUserAnalysedDreams
+    handler: lambdas/analysedDreams/functions/handler.getUserAnalysedDreams
     events:
       - httpApi:
           path: /dreams/{userId}
