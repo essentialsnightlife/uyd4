@@ -1,7 +1,7 @@
 import { PublishCommand, PublishCommandInput, SNSClient } from "@aws-sdk/client-sns";
 
 import { removeNonLetters } from "./helpers";
-import { AnalysedDream } from "./lambdas/analysedDreams/types";
+import { AnalysedDream } from "../lambdas/analysedDreams/types";
 
 export async function analyseDream(query: string) {
   let response;
@@ -30,7 +30,7 @@ export async function analyseDream(query: string) {
     console.log(data.body);
     throw new Error("Sorry, there was an error trying to analyse your dream. Please try again. 🙏");
   }
-  return removeNonLetters(data.body.result);
+  return removeNonLetters(data.body.result.text);
 }
 
 export const getUsersDreams = async (id: string) => {

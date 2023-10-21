@@ -53,3 +53,7 @@ export function formatterAnalysedDream({
     date: new Date().toISOString(),
   };
 }
+
+export function formatQuery(query: string, userContext: string) {
+  return "question is " + query + ", and the context for the user is: " + userContext;
+}

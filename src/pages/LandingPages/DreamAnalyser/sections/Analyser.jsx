@@ -11,24 +11,16 @@ import MKBox from "src/components/MKBox";
 // Components
 import DreamAnalyserCard from "src/components/Cards/DreamAnalyserCard";
 
-// Constants
-import { ANALYSER_INPUT_MAX_CHARS } from "/@//constants";
-
-function Analyser({ query, setQuery, onSubmit, placeholderText }) {
+function Analyser({ analyser, context, onSubmit }) {
   return (
     <MKBox component="section" py={0}>
       <Container>
         <Grid container spacing={3} alignItems="center">
           <Grid item xs={12} lg={12} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
-            <form onSubmit={(e) => onSubmit(e, query)}>
+            <form onSubmit={(e) => onSubmit(e, analyser, context)}>
               <DreamAnalyserCard
-                maxLength={ANALYSER_INPUT_MAX_CHARS}
-                placeholderText={placeholderText}
-                query={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                }}
-                title="tell us about your dream"
+                analyser={analyser}
+                context={context}
                 action={{
                   type: "internal",
                   color: "info",
@@ -45,10 +37,21 @@ function Analyser({ query, setQuery, onSubmit, placeholderText }) {
 
 // Typechecking props for the Analyser
 Analyser.propTypes = {
-  query: PropTypes.string.isRequired,
-  setQuery: PropTypes.func.isRequired,
+  analyser: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    rows: PropTypes.number.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    placeholderText: PropTypes.string.isRequired,
+  }),
+  context: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    rows: PropTypes.number.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    placeholderText: PropTypes.string.isRequired,
+  }),
   onSubmit: PropTypes.func.isRequired,
-  placeholderText: PropTypes.string.isRequired,
 };
 
 export default Analyser;

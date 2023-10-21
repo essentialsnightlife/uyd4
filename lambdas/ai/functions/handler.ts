@@ -1,13 +1,12 @@
 import { OPENAI_MODEL_CONFIG } from "../../../src/constants";
 import { sendAIQuestion } from "./index";
-import { promptGenerator } from "./index";
 
 interface Event {
   body: string;
 }
 
 export async function analyser(event: Event) {
-  const prompt = promptGenerator(event.body);
+  const query = event.body;
 
   if (!event.body) {
     return {
@@ -19,7 +18,7 @@ export async function analyser(event: Event) {
   try {
     const completionText = await sendAIQuestion({
       model: OPENAI_MODEL_CONFIG.model,
-      prompt: prompt,
+      prompt: query,
       temperature: OPENAI_MODEL_CONFIG.temperature,
       max_tokens: OPENAI_MODEL_CONFIG.max_tokens,
     });

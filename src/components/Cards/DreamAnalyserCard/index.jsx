@@ -12,22 +12,52 @@ import MKTypography from "../../MKTypography";
 import MKButton from "../../MKButton";
 import MKInput from "../../MKInput";
 
-function DreamAnalyserCard({ title, maxLength, query, onChange, placeholderText, action }) {
+function DreamAnalyserCard({ analyser, context, action }) {
   return (
     <Card>
-      <MKBox p={3} mt={0} textAlign="center">
-        <MKTypography display="inline" variant="h5" textTransform="capitalize" fontWeight="regular">
-          {title}
+      <MKBox p={3} mt={0}>
+        <MKTypography
+          display="block"
+          variant="5"
+          fontWeight="bold"
+          mt={1}
+          ml={0.5}
+          mb={1.5}
+          textTransform="capitalize"
+        >
+          {analyser.title}
         </MKTypography>
         <MKBox mt={1} mb={3}>
           <MKInput
-            maxLength={maxLength}
+            maxLength={analyser.maxLength}
             multiline
-            rows={3}
+            rows={analyser.rows}
             fullWidth
-            label={placeholderText}
-            value={query}
-            onChange={onChange}
+            label={analyser.placeholderText}
+            value={analyser.value}
+            onChange={analyser.onChange}
+          />
+        </MKBox>
+        <MKTypography
+          display="block"
+          variant="5"
+          fontWeight="bold"
+          mt={1}
+          ml={0.5}
+          mb={1.5}
+          textTransform="capitalize"
+        >
+          {context.title}
+        </MKTypography>
+        <MKBox mt={1} mb={3}>
+          <MKInput
+            maxLength={context.maxLength}
+            multiline
+            rows={context.rows}
+            fullWidth
+            label={context.placeholderText}
+            value={context.value}
+            onChange={context.onChange}
           />
         </MKBox>
         {action.type === "external" ? (
@@ -56,13 +86,36 @@ function DreamAnalyserCard({ title, maxLength, query, onChange, placeholderText,
   );
 }
 
-// Typechecking props for the CenteredBlogCard
+DreamAnalyserCard.defaultProps = {
+  analyser: {
+    rows: 3,
+    maxLength: 400,
+  },
+  context: {
+    rows: 2,
+    maxLength: 300,
+  },
+};
+
+// Typechecking props for the DreamAnalyserCard
 DreamAnalyserCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  maxLength: PropTypes.number.isRequired,
-  query: PropTypes.string.isRequired,
+  analyser: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    maxLength: PropTypes.number.isRequired,
+    placeholderText: PropTypes.string,
+    rows: PropTypes.number,
+    onChange: PropTypes.func.isRequired,
+  }),
+  context: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    maxLength: PropTypes.number.isRequired,
+    placeholderText: PropTypes.string,
+    rows: PropTypes.number,
+    onChange: PropTypes.func.isRequired,
+  }),
   onChange: PropTypes.func.isRequired,
-  placeholderText: PropTypes.string,
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]).isRequired,
     color: PropTypes.oneOf([
