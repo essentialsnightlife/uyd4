@@ -8,7 +8,7 @@ import {
   ScanCommandInput,
 } from "@aws-sdk/client-dynamodb";
 
-import { AWS_REGION } from "../../../constants";
+import { AWS_REGION } from "../../../src/constants";
 
 const dbClient = new DynamoDBClient({ region: AWS_REGION });
 const TableName = process.env.TABLE_NAME;

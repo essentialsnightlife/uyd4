@@ -1,6 +1,6 @@
 import { Session } from "@supabase/supabase-js";
 
-import { AnalysedDream } from "./lambdas/analysedDreams/types";
+import { AnalysedDream } from "../lambdas/analysedDreams/types";
 
 export function removeNonLetters(str: string) {
   return str.replace(/^[^a-zA-Z]*/g, "");

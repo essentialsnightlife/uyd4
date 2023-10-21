@@ -1,7 +1,6 @@
 import { OpenAIApi } from "openai";
 
-import { BOT_INSTRUCTIONS } from "../../../constants";
-import { config } from "../config";
+import { BOT_INSTRUCTIONS } from "../../../src/constants";
 
 type AIQuestion = {
   model: string;

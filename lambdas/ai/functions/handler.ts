@@ -1,4 +1,4 @@
-import { OPENAI_MODEL_CONFIG } from "../../../constants";
+import { OPENAI_MODEL_CONFIG } from "../../../src/constants";
 import { sendAIQuestion } from "./index";
 import { promptGenerator } from "./index";
 

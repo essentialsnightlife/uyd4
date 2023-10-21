@@ -1,4 +1,4 @@
-import { BOT_INSTRUCTIONS } from "../../constants";
+import { BOT_INSTRUCTIONS } from "../../src/constants";
 import { promptGenerator } from "./functions";
 
 const botInstructions: string = BOT_INSTRUCTIONS;
