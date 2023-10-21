@@ -2,7 +2,7 @@ import { createClient, Session } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { sortedAnalysedDreams } from "../helpers";
 import { getUsersDreams } from "../apis";
-import { AnalysedDream } from "../lambdas/analysedDreams/types";
+import { AnalysedDream } from "../../lambdas/analysedDreams/types";
 
 const VITE_SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const VITE_SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
