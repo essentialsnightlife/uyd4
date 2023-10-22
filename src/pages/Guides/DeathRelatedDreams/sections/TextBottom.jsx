@@ -13,10 +13,10 @@ function TextBottom() {
     <MKBox component="section" py={6} mt={2}>
       <Container>
         <Grid container spacing={3} item xs={12} lg={8} mx="auto">
-          <MKTypography variant="h4" mb={3}>
+          <MKTypography variant="h4" mb={2}>
             Challenges
           </MKTypography>
-          <MKTypography variant="body2" mb={6}>
+          <MKTypography variant="body2" mb={3}>
             Dreaming about someone dying can present emotional and psychological challenges,
             including feelings of grief, loss, and potential uncertainty about the significance or
             impact of the dream.
@@ -57,14 +57,14 @@ function TextBottom() {
           <MKTypography variant="h5" mb={2}>
             Symbolic Representation
           </MKTypography>
-          <MKTypography variant="body2" mb={4}>
+          <MKTypography variant="body2" mb={3}>
             It&#39;s essential to remember that dreams are highly subjective and open to
             interpretation. While dreaming of someone&#39;s death may have symbolic meanings,
             it&#39;s essential to be cautious about over analysing or attributing too much
             significance to the dream, as dreams often incorporate imagery from our subconscious and
             can be influenced by various factors.
           </MKTypography>
-          <MKTypography variant="body2" mb={2}>
+          <MKTypography variant="body2">
             Overall, dreaming about someone&#39;s death can have both pros and cons. It&#39;s
             important to approach these dreams with self-reflection, empathy, and an understanding
             that dreams are personal experiences that may carry different meanings

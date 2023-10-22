@@ -13,10 +13,10 @@ function TextBottom() {
     <MKBox component="section" py={6} mt={2}>
       <Container>
         <Grid container spacing={3} item xs={12} lg={8} mx="auto">
+          <MKTypography variant="h4" mb={1}>
+            Challenges
+          </MKTypography>
           <MKTypography variant="body2">
-            <MKTypography variant="h4" mb={2}>
-              Challenges
-            </MKTypography>
             In addition to reflecting our innermost fears, nightmares can also be a warning. For
             example, if a person is feeling overwhelmed or stressed in their life, they may have
             nightmares as a way of alerting them to the fact that they need to take a break and make

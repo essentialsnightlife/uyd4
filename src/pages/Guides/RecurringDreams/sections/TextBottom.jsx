@@ -33,7 +33,6 @@ function TextBottom() {
             The exact meaning of a recurring dream can be difficult to pinpoint. There can be
             multiple explanations for why they occur. It is important to remember that dreams are
             highly personal and may have different meanings for different people.
-            <br /> <br />
           </MKTypography>
         </Grid>
       </Container>

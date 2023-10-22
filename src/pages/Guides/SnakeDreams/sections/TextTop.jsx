@@ -28,34 +28,39 @@ function TextTop() {
             person to person, but there are some potential explanations for why people might
             experience them.
           </MKTypography>
-          <MKTypography variant="body2">
+          <MKTypography variant="body2" mb={2}>
             Dreaming about snakes can be a confusing and sometimes frightening experience. Dreams
             can often be a reflection of our innermost thoughts and feelings, and it is not unusual
             for people to dream about snakes. The exact meaning of these dreams can vary from person
             to person, but there are some potential explanations for why people might experience
             them.
-            <br /> <br />
-            <MKTypography variant="h5" mb={2}>
-              Reasoning
-            </MKTypography>
+          </MKTypography>
+          <MKTypography variant="h5" mb={2}>
+            Reasoning
+          </MKTypography>
+          <MKTypography variant="body2" mb={2}>
             One explanation for dreaming about snakes is that it can be a reflection of repressed
             emotions or issues. Dreams about snakes may be a sign that a person is struggling with a
             difficult situation or emotion in their life. It could be a sign that the person is
             feeling overwhelmed, threatened, or anxious about something.
             <br />
             <br />
-            <MKTypography variant="h5" mb={2}>
-              Growth
-            </MKTypography>
+          </MKTypography>
+          <MKTypography variant="h5" mb={2}>
+            Growth
+          </MKTypography>
+          <MKTypography variant="body2" mb={2}>
             Another explanation for dreaming about snakes is that it can be a sign of transformation
             or growth. Snakes are often seen as symbols of transformation and rebirth, so dreaming
             about them could be a sign that the person is going through a period of change or
             transition in their life.
             <br />
             <br />
-            <MKTypography variant="h5" mb={2}>
-              Wisdom
-            </MKTypography>
+          </MKTypography>
+          <MKTypography variant="h5" mb={2}>
+            Wisdom
+          </MKTypography>
+          <MKTypography variant="body2" mb={2}>
             Finally, dreaming about snakes can also be a sign of intuition or inner wisdom. Snakes
             are often seen as symbols of intuition and inner wisdom, so dreaming about them could be
             a sign that the person is receiving messages from their unconscious mind.

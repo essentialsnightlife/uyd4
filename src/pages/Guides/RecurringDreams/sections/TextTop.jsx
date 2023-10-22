@@ -26,7 +26,7 @@ function TextTop() {
             Recurring dreams can be a sign that there is something unresolved or unaddressed in our
             lives, and they can be a way for our subconscious to prompt us to take action.
           </MKTypography>
-          <MKTypography variant="body2">
+          <MKTypography variant="body2" mb={2}>
             One of the most mysterious aspects of dreaming is the concept of recurring dreams. A
             recurring dream is a dream that a person has multiple times over a certain period of
             time.
@@ -34,40 +34,41 @@ function TextTop() {
             When it comes to recurring dreams, there is often a deeper meaning behind this dream
             symbol. Recurring dreams can be a sign that there is something unresolved or unaddressed
             in our lives, and they can be a way for our subconscious to prompt us to take action.
-            <br /> <br />
-            <MKTypography variant="h4" mb={2}>
-              Positives
-            </MKTypography>
-            <MKTypography variant="h5" mb={2}>
-              Personal Growth
-            </MKTypography>
+          </MKTypography>
+          <MKTypography variant="h4" mb={2}>
+            Positives
+          </MKTypography>
+          <MKTypography variant="h5" mb={1}>
+            Personal Growth
+          </MKTypography>
+          <MKTypography variant="body2" mb={2}>
             Recurring dreams that depict personal growth or progress can signify a positive and
             ongoing transformation in your life. These dreams may reflect your journey toward
             self-improvement, increased self-awareness, and a desire to reach your full potential.
-            <br />
-            <br />
-            <MKTypography variant="h5" mb={2}>
-              Manifestation of Goals
-            </MKTypography>
+          </MKTypography>
+          <MKTypography variant="h5" mb={1}>
+            Manifestation of Goals
+          </MKTypography>
+          <MKTypography variant="body2" mb={2}>
             Positive recurring dreams can sometimes represent the manifestation of your goals and
             desires. These dreams may indicate that you are moving closer to achieving what you
             desire in your waking life. They can serve as a reminder to stay focused, motivated, and
             optimistic about your aspirations.
-            <br />
-            <br />
-            <MKTypography variant="h5" mb={2}>
-              Symbolic Messages
-            </MKTypography>
+          </MKTypography>
+          <MKTypography variant="h5" mb={1}>
+            Symbolic Messages
+          </MKTypography>
+          <MKTypography variant="body2" mb={2}>
             Recurring dreams often contain symbolic messages that reflect your subconscious
             thoughts, emotions, or conflicts. Positive recurring dreams may carry empowering
             messages, such as encouragement, inner strength, or reminders of your innate potentials.
             These dreams can provide a sense of reassurance, hope, and guidance in navigating
             challenges and pursuing your passions.
-            <br />
-            <br />
-            <MKTypography variant="h5" mb={2}>
-              Emotional Healing
-            </MKTypography>
+          </MKTypography>
+          <MKTypography variant="h5" mb={1}>
+            Emotional Healing
+          </MKTypography>
+          <MKTypography variant="body2">
             Some recurring dreams may symbolize ongoing emotional healing or resolution of past
             wounds. These dreams can indicate that you are actively working through and transcending
             emotional pain or trauma, leading to greater personal well-being, inner peace, and

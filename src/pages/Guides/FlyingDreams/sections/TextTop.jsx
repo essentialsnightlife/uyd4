@@ -22,16 +22,16 @@ function TextTop() {
           >
             TLDR
           </MKTypography>
-          <MKTypography variant="h3" mb={3}>
+          <MKTypography variant="h3" mb={2}>
             Dreams of flying are one of the most common and popular dreams experienced by people.
             These dreams are often seen as a symbol of freedom, power and joy.
           </MKTypography>
-          <MKTypography variant="body2" mb={3}>
+          <MKTypography variant="body2" mb={2}>
             Dreams of flying are one of the most common and popular dreams experienced by people.
             These dreams are often seen as a symbol of freedom, power and joy. Flying dreams can be
             interpreted in many different ways and can have a variety of meanings.
           </MKTypography>
-          <MKTypography variant="h5" mb={2}>
+          <MKTypography variant="h5" mb={1}>
             Freedom and Power
           </MKTypography>
           <MKTypography variant="body2" mb={2}>
@@ -41,7 +41,7 @@ function TextTop() {
             can be a way of expressing a desire to escape from the mundane and discover something
             new.
           </MKTypography>
-          <MKTypography variant="h5" mb={2}>
+          <MKTypography variant="h5" mb={1}>
             Ambition
           </MKTypography>
           <MKTypography variant="body2" mb={2}>
@@ -49,7 +49,7 @@ function TextTop() {
             goals and gain a sense of accomplishment in life. The dreamer may feel as if they are
             soaring higher than their peers and reaching new heights in their achievements.
           </MKTypography>
-          <MKTypography variant="h5" mb={2}>
+          <MKTypography variant="h5" mb={1}>
             Success
           </MKTypography>
           <MKTypography variant="body2" mb={2}>
@@ -58,7 +58,7 @@ function TextTop() {
             something that may seem impossible. It could also represent a desire to conquer
             obstacles in life and to rise above them.
           </MKTypography>
-          <MKTypography variant="h5" mb={2}>
+          <MKTypography variant="h5" mb={1}>
             Hope
           </MKTypography>
           <MKTypography variant="body2" mb={2}>
