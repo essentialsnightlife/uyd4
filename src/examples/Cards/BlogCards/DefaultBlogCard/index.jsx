@@ -15,16 +15,17 @@ import MKBox from "src/components/MKBox";
 import MKTypography from "src/components/MKTypography";
 import MKAvatar from "src/components/MKAvatar";
 
-function DefaultBlogCard({ image, category, title, description, author, raised, action }) {
+function DefaultBlogCard({ url, category, alt, description, author, raised, action }) {
   const imageTemplate = (
     <>
       <MKBox
         component="img"
-        src={image}
-        alt={title}
+        src={url}
+        alt={alt}
         borderRadius="lg"
         shadow={raised ? "md" : "none"}
-        width="100%"
+        width="300px"
+        height="300px"
         position="relative"
         zIndex={1}
       />
@@ -39,7 +40,7 @@ function DefaultBlogCard({ image, category, title, description, author, raised, 
         sx={
           raised
             ? {
-                backgroundImage: `url(${image})`,
+                backgroundImage: `url(${url})`,
                 transform: "scale(0.94)",
                 filter: "blur(12px)",
                 backgroundSize: "cover",
@@ -82,7 +83,7 @@ function DefaultBlogCard({ image, category, title, description, author, raised, 
               my={1}
               sx={{ display: "inline-block" }}
             >
-              {title}
+              {alt}
             </MKTypography>
           </Link>
         ) : (
@@ -94,7 +95,7 @@ function DefaultBlogCard({ image, category, title, description, author, raised, 
               mb={1}
               sx={{ display: "inline-block" }}
             >
-              {title}
+              {alt}
             </MKTypography>
           </MuiLink>
         )}
@@ -133,7 +134,7 @@ DefaultBlogCard.defaultProps = {
 
 // Typechecking props for the DefaultBlogCard
 DefaultBlogCard.propTypes = {
-  image: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   category: PropTypes.oneOfType([
     PropTypes.shape({
       color: PropTypes.oneOf([
@@ -149,7 +150,7 @@ DefaultBlogCard.propTypes = {
     }),
     PropTypes.bool,
   ]),
-  title: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   author: PropTypes.oneOfType([
     PropTypes.shape({
