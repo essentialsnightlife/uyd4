@@ -8,15 +8,11 @@ import React from "react";
 // Material Kit 2 PRO React components
 import MKTypography from "src/components/MKTypography";
 
-// Images
-import logoCT from "src/assets/images/logo-ct-dark.png";
-
 const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "Material Kit 2 PRO",
-    image: logoCT,
+    name: "Use Your Dream",
     route: "/",
   },
   socials: [],
