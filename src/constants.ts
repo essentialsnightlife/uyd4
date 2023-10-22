@@ -1,5 +1,5 @@
 export const ANALYSER_INPUT_MAX_CHARS = 200;
-export const AWS_REGION = "eu-west-2";
+export const AWS_REGION = "eu-west-1";
 export const BOT_INSTRUCTIONS =
   "You are an expert dream analyser. \n" +
   "Analyse this dream or question, firstly what is the summary of the answer in one sentence? dont say that you're summarising the answer just do it. can the answer be slightly more positive where positive or at least not all negative. \n" +

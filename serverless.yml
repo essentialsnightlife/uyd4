@@ -1,12 +1,12 @@
 service: uyd
-app: uyd2
-org: eds101
+app: uyd4
+org: edot101
 useDotenv: true
 
 provider:
   name: aws
   runtime: nodejs14.x
-  region: eu-west-2
+  region: eu-west-1
   iam:
     role:
       statements:
@@ -37,7 +37,7 @@ provider:
         - https://uyd.vercel.app/
 
 functions:
-  savee-analysed-dream:
+  save-analysed-dream:
     handler: lambdas/analysedDreams/functions/handler.save
     events:
       - sns: AnsweredQueryTopic
@@ -86,8 +86,7 @@ resources:
       Type: AWS::SNS::TopicPolicy
       Properties:
         Topics:
-          - arn:aws:sns:eu-west-2:410317984454:DreamRecordTopic
-          - arn:aws:sns:eu-west-2:410317984454:TestTopic
+          - arn:aws:sns:eu-west-1:410317984454:AnsweredQueryTopic
         PolicyDocument:
           Version: "2012-10-17"
           Statement:

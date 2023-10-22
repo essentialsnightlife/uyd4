@@ -8,7 +8,7 @@ export async function analyseDream(query: string) {
   let data;
   try {
     response = await fetch(
-      "https://d3xxs9kqk8.execute-api.eu-west-2.amazonaws.com/dreams/analyse",
+      "https://ve1j9omi25.execute-api.eu-west-1.amazonaws.com/dreams/analyse",
       {
         method: "POST",
         headers: { "Content-Type": "text/plain" },
@@ -36,7 +36,8 @@ export async function analyseDream(query: string) {
 export const getUsersDreams = async (id: string) => {
   try {
     const response = await fetch(
-      "https://d3xxs9kqk8.execute-api.eu-west-2.amazonaws.com/dreams/" + id || "user123"
+      "https://ve1j9omi25.execute-api.eu-west-1.amazonaws.com/dreams/user123"
+      // + id || "user123"
     );
     const result = await response.json();
     console.log("getUsersDreams - result: ", result);
@@ -50,7 +51,7 @@ export const getUsersDreams = async (id: string) => {
 export async function deleteDream(dreamId: string) {
   try {
     const response = await fetch(
-      "https://d3xxs9kqk8.execute-api.eu-west-2.amazonaws.com/dreams/" + dreamId,
+      "https://ve1j9omi25.execute-api.eu-west-1.amazonaws.com/dreams/" + dreamId,
       {
         method: "DELETE",
       }
@@ -76,12 +77,12 @@ export async function publishAnalysedDream(analysedDream: AnalysedDream) {
   };
 
   let snsClient = new SNSClient({
-    region: "eu-west-2",
+    region: "eu-west-1",
     credentials,
   });
   if (import.meta.env.DEV) {
     snsClient = new SNSClient({
-      region: "eu-west-2",
+      region: "eu-west-1",
       endpoint: "http://localhost:4002",
       credentials: {
         accessKeyId: "",
@@ -93,7 +94,7 @@ export async function publishAnalysedDream(analysedDream: AnalysedDream) {
   const { id, userId, query, response, date } = analysedDream;
   console.log("publishAnalysedDream - analysedDream obj: ", analysedDream);
   const input: PublishCommandInput = {
-    TopicArn: "arn:aws:sns:eu-west-2:410317984454:AnsweredQueryTopic",
+    TopicArn: "arn:aws:sns:eu-west-1:410317984454:AnsweredQueryTopic",
     Message: JSON.stringify({ id, userId, query, response, date }),
   };
 
