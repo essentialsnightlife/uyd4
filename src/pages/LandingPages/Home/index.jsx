@@ -28,7 +28,7 @@ import routes from "routes";
 import footerRoutes from "src/footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-presentation.jpg";
+import bgImage from "assets/images/uyd-banner.png";
 import { useSupabaseSession } from "/@//auth/client";
 
 function Home() {
