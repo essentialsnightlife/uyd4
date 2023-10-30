@@ -74,7 +74,7 @@ function DreamAnalyser() {
     };
 
     fetchData();
-  }, [userSession]);
+  }, []);
 
   const handleSubmit = async (e, analyser, context) => {
     e.preventDefault();

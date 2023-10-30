@@ -22,7 +22,7 @@ export function useSupabaseSession() {
     };
 
     fetchData();
-  }, [session]);
+  }, []);
 
   return { client, session };
 }
