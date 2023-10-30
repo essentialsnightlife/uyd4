@@ -57,14 +57,10 @@ function DreamAnalyser() {
     const fetchData = async () => {
       session && setUserSession(session);
 
-      async function loadSavedDreamsFromDB() {
+      if (session) {
         const analysedDreamsDB = await getAnalysedDreamsFromDB(session);
         console.log("analysedDreamsDB", analysedDreamsDB);
         setSavedDreams(analysedDreamsDB);
-      }
-
-      if (session) {
-        await loadSavedDreamsFromDB();
       } else {
         const analysedDreamsLocal = JSON.parse(localStorage.getItem("uyd_saved"));
         console.log("analysedDreamsLocal", analysedDreamsLocal);

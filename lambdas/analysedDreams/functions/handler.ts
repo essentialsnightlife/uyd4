@@ -17,9 +17,11 @@ export async function save(event: any) {
   console.log("event", event);
   console.log("Object.keys(event) ", Object.keys(event));
 
-  const { id, userId, query, response, date } = event; // for local testing
-  if (event.Records) {
-    const { id, userId, query, response, date } = JSON.parse(event.Records[0].Sns.Message);
+  // const { id, userId, query, response, date } = event; // for local testing
+  const { id, userId, query, response, date } = JSON.parse(event.Records[0].Sns.Message);
+
+  if (!id) {
+    const { id, userId, query, response, date } = event; // for local testing
   }
 
   const newAnalysedDream = {
