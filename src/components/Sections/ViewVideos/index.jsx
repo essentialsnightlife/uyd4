@@ -51,7 +51,7 @@ function ViewVideos() {
             <MKTypography variant="h2" color="white" mb={3}>
               Videos
             </MKTypography>
-            <MKTypography variant="body" color="white" mb={2} opacity={0.8} fontWeight="800">
+            <MKTypography variant="body" color="white" mb={2} opacity={0.8} fontWeight="regular">
               Text to add about creating videos here etc We created many examples for pages like
               Signup, Signin, Forgot Password, 2FA Authentification and so on. Just choose between a
               Basic Design, an illustration or a cover!

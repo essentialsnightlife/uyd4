@@ -13,8 +13,8 @@ import MKTypography from "src/components/MKTypography";
 import RecentlyAnalysedDreamCard from "src/components/Cards/RecentlyAnalysedDreamCard";
 import PropTypes from "prop-types";
 import { formatDate } from "/@//helpers";
+
 function RecentlyAnalysedDreams({ dreams, title, subtitle, count = 10 }) {
-  console.log(dreams);
   return (
     <MKBox
       component="section"
