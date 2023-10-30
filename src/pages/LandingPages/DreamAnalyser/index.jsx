@@ -30,7 +30,13 @@ import AnalyserResponse from "pages/LandingPages/DreamAnalyser/sections/Analyser
 
 // Functions & Helpers
 import { analyseDream, publishAnalysedDream } from "/@//apis";
-import { apiCallsLeft, formatQuery, formatterAnalysedDream } from "/@//helpers";
+import {
+  apiCallsLeft,
+  formatQuery,
+  formatterAnalysedDream,
+  getAnalysedDreamsFromDB,
+  saveAnalysedDreamToLocalStorageUpdateState,
+} from "/@//helpers";
 import { ANALYSER_INPUT_MAX_CHARS, DEFAULT_MAX_API_CALLS } from "/@//constants";
 import { useSupabaseSession } from "/@//auth/client";
 
@@ -42,14 +48,33 @@ function DreamAnalyser() {
   const [userSession, setUserSession] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const { session } = useSupabaseSession();
+  // const session = null;
+
   document.title = "Dream Analyser | UYD";
-  const { session, analysedDreams } = useSupabaseSession();
 
   useEffect(() => {
-    session && setUserSession(session);
-    analysedDreams && setSavedDreams(analysedDreams);
-    console.log("Session", session);
-  }, [userSession, analysedDreams]);
+    const fetchData = async () => {
+      session && setUserSession(session);
+
+      async function loadSavedDreamsFromDB() {
+        const analysedDreamsDB = await getAnalysedDreamsFromDB(session);
+        console.log("analysedDreamsDB", analysedDreamsDB);
+        setSavedDreams(analysedDreamsDB);
+      }
+
+      if (session) {
+        await loadSavedDreamsFromDB();
+      } else {
+        const analysedDreamsLocal = JSON.parse(localStorage.getItem("uyd_saved"));
+        console.log("analysedDreamsLocal", analysedDreamsLocal);
+        analysedDreamsLocal && setSavedDreams(analysedDreamsLocal);
+      }
+      console.log("Session", session);
+    };
+
+    fetchData();
+  }, [userSession]);
 
   const handleSubmit = async (e, analyser, context) => {
     e.preventDefault();
@@ -66,8 +91,9 @@ function DreamAnalyser() {
           analysedDream: dreamResponse,
           session,
         });
-        // await publishAnalysedDream(analysedDream);
-        setSavedDreams((prev) => [...prev, analysedDream]);
+        session
+          ? await publishAnalysedDream(analysedDream)
+          : saveAnalysedDreamToLocalStorageUpdateState(analysedDream, setSavedDreams);
         if (apiCallsLeft(savedDreams, DEFAULT_MAX_API_CALLS) === 1) {
           alert(`You have one more dream to analyse for today! 1️⃣`);
         }

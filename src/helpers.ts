@@ -1,6 +1,9 @@
 import { Session } from "@supabase/supabase-js";
 
 import { AnalysedDream } from "../lambdas/analysedDreams/types";
+import { BOT_INSTRUCTIONS } from "./constants";
+import React from "react";
+import { getUsersDreams } from "./apis";
 
 export function removeNonLetters(str: string) {
   return str.replace(/^[^a-zA-Z]*/g, "");
@@ -55,5 +58,28 @@ export function formatterAnalysedDream({
 }
 
 export function formatQuery(query: string, userContext: string) {
-  return "question is " + query + ", and the context for the user is: " + userContext;
+  return BOT_INSTRUCTIONS + "; question is " + query + "; context is: " + userContext;
+}
+
+export const saveAnalysedDreamToLocalStorageUpdateState = (
+  analysedDream: AnalysedDream,
+  setterFunc: React.Dispatch<React.SetStateAction<AnalysedDream[]>>
+) => {
+  const existingSavedDreams = localStorage.getItem("uyd_saved");
+  let savedDreamsArray = [];
+
+  if (existingSavedDreams) {
+    savedDreamsArray = JSON.parse(existingSavedDreams);
+  }
+
+  savedDreamsArray.push(analysedDream);
+  localStorage.setItem("uyd_saved", JSON.stringify(savedDreamsArray));
+  setterFunc([...savedDreamsArray]);
+};
+
+export async function getAnalysedDreamsFromDB(session: Session | null) {
+  const userId = session?.user?.id || "";
+  const data = await getUsersDreams(userId);
+  console.log("responses", data.responses);
+  return data.responses || [];
 }

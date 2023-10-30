@@ -30,11 +30,11 @@ import { useSupabaseSession } from "src/auth/client";
 import { useEffect, useState } from "react";
 
 function SavedDreams() {
+  const { session, analysedDreams } = useSupabaseSession();
   const [userSession, setUserSession] = useState(null);
   const [savedDreams, setSavedDreams] = useState([]);
 
   document.title = "Saved Dreams | UYD";
-  const { session, analysedDreams } = useSupabaseSession();
 
   useEffect(() => {
     session && setUserSession(session);

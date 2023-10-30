@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { supabaseClient } from "/@//auth/client";
+import { useSupabaseSession } from "/@//auth/client";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -19,8 +19,8 @@ import PropTypes from "prop-types";
 
 const emailRedirectUrl = import.meta.env.VITE_EMAIL_REDIRECT_URL;
 
-const handleLogin = async (email) => {
-  const { data, error } = await supabaseClient().auth.signInWithOtp({
+const handleLogin = async (email, client) => {
+  const { data, error } = await client.auth.signInWithOtp({
     email,
     options: {
       emailRedirectTo: emailRedirectUrl,
@@ -38,6 +38,7 @@ const handleLogin = async (email) => {
 function SignInBasic({ signUp }) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const { client } = useSupabaseSession();
 
   document.title = signUp ? "Sign Up | UYD" : "Sign In | UYD";
 
@@ -59,7 +60,7 @@ function SignInBasic({ signUp }) {
             onSubmit={(e) => {
               e.preventDefault();
               setLoading(true);
-              handleLogin(email);
+              handleLogin(email, client);
               setLoading(false);
             }}
           >

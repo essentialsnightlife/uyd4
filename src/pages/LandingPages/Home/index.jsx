@@ -32,8 +32,8 @@ import bgImage from "assets/images/uyd-banner.png";
 import { useSupabaseSession } from "/@//auth/client";
 
 function Home() {
-  const [, setUserSession] = useState(null);
   const { session } = useSupabaseSession();
+  const [, setUserSession] = useState(null);
 
   document.title = "Home | UYD";
 

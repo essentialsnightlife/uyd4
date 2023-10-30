@@ -1,51 +1,28 @@
 import { createClient, Session } from "@supabase/supabase-js";
-import { useEffect, useState } from "react";
-import { sortedAnalysedDreams } from "../helpers";
-import { getUsersDreams } from "../apis";
-import { AnalysedDream } from "../../lambdas/analysedDreams/types";
+import { useEffect, useMemo, useState } from "react";
 
 const VITE_SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const VITE_SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export const supabaseClient = () => {
-  return createClient(VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY);
-};
-
-export const useSupabaseSession = () => {
-  const [session, setSession] = useState<Session | null>(null);
-  const [analysedDreams, setAnalysedDreams] = useState<AnalysedDream[]>([]);
-
-  useEffect(() => {
-    supabaseClient()
-      .auth.getSession()
-      .then(({ data: { session } }) => {
-        console.log("auth.getSession()", session);
-        setSession(session);
-      });
-
-    const {
-      data: { subscription },
-    } = supabaseClient().auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-
-    return () => subscription.unsubscribe();
+export function useSupabaseSession() {
+  const client = useMemo(() => {
+    return createClient(VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY);
   }, []);
-
-  const userId = session?.user?.id || "";
+  const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
-    const fetchAnalysedDreams = async () => {
-      const data = await getUsersDreams(userId);
-      console.log("responses", data.responses);
-      return data.responses || [];
+    const fetchData = async () => {
+      try {
+        const { data: sessionData } = await client.auth.getSession();
+        console.log("auth.getSession()", sessionData);
+        setSession(sessionData.session);
+      } catch (error) {
+        console.error("Error fetching session:", error);
+      }
     };
 
-    fetchAnalysedDreams().then((analysedDreams) => {
-      console.log("fetchingAnalysedDreams: ", analysedDreams);
-      setAnalysedDreams(sortedAnalysedDreams(analysedDreams));
-    });
-  }, [userId]);
+    fetchData();
+  }, [session]);
 
-  return { session, analysedDreams };
-};
+  return { client, session };
+}
