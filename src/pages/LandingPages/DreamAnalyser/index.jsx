@@ -181,7 +181,7 @@ function DreamAnalyser() {
         <AnalyserResponse
           analysedDream={lastAnalysedDream}
           loading={loading}
-          disabled={!(loading || lastAnalysedDream)}
+          disabled={!(loading || lastAnalysedDream === {})}
         />
         <RecentlyAnalysedDreams
           dreams={savedDreams}
