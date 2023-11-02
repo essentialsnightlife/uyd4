@@ -19,7 +19,7 @@ function NoDreamsAnalysed() {
           <Grid item xs={12} lg={6}>
             <Grid container justifyContent="flex-start">
               <DefaultCounterCard
-                color="warning"
+                color="dark"
                 count={0}
                 description="Dreams analysed - Register or Login to stop your dreams slipping away..."
               />
