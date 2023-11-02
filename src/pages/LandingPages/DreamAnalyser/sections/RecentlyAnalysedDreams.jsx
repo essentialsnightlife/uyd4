@@ -1,4 +1,5 @@
 import * as React from "react";
+import { memo } from "react";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -12,9 +13,18 @@ import MKTypography from "src/components/MKTypography";
 // Material Kit 2 React examples
 import RecentlyAnalysedDreamCard from "src/components/Cards/RecentlyAnalysedDreamCard";
 import PropTypes from "prop-types";
+
+// Helpers
 import { formatDate } from "/@//helpers";
 
-function RecentlyAnalysedDreams({ dreams, title, subtitle, count = 10 }) {
+const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
+  dreams,
+  title,
+  subtitle,
+  count = 10,
+}) {
+  dreams.sort((a, b) => new Date(b.date) - new Date(a.date));
+
   return (
     <MKBox
       component="section"
@@ -37,18 +47,17 @@ function RecentlyAnalysedDreams({ dreams, title, subtitle, count = 10 }) {
           </Grid>
         </Grid>
         <Grid container spacing={3}>
-          {Array.isArray(dreams) &&
-            dreams.splice(0, count).map((dream, i) => (
-              <Grid key={i} item xs={12} lg={6}>
-                <MKBox mb={1}>
-                  <RecentlyAnalysedDreamCard
-                    query={dream.query}
-                    date={{ color: "secondary", label: formatDate(dream.date) }}
-                    response={dream.response}
-                  />
-                </MKBox>
-              </Grid>
-            ))}
+          {dreams.splice(0, count).map((dream, i) => (
+            <Grid key={i} item xs={12} lg={6}>
+              <MKBox mb={1}>
+                <RecentlyAnalysedDreamCard
+                  query={dream.query}
+                  date={{ color: "secondary", label: formatDate(dream.date) }}
+                  response={dream.response}
+                />
+              </MKBox>
+            </Grid>
+          ))}
         </Grid>
         <MKBox mt={2}>
           <MKTypography
@@ -80,18 +89,18 @@ function RecentlyAnalysedDreams({ dreams, title, subtitle, count = 10 }) {
       </Container>
     </MKBox>
   );
-}
+});
 
 RecentlyAnalysedDreams.propTypes = {
   dreams: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      userId: PropTypes.string.isRequired,
+      id: PropTypes.string,
+      userId: PropTypes.string,
       date: PropTypes.string.isRequired,
       query: PropTypes.string.isRequired,
       response: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,

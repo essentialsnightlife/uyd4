@@ -25,7 +25,9 @@ function HeroAnalysedCard({
   image,
   position,
 }) {
-  if (disabled) {
+  const { query, response } = analyserObj;
+
+  if (disabled || query === null || undefined) {
     return null;
   }
 
@@ -64,7 +66,7 @@ function HeroAnalysedCard({
             <MKTypography variant="h6" color={position.color} mb={1}>
               Analysis
             </MKTypography>
-            <MKTypography variant="h5">{analyserObj.response}</MKTypography>
+            <MKTypography variant="h5">{response}</MKTypography>
             <MKTypography variant="body2" color="text">
               {analyserObj.query}
             </MKTypography>
@@ -95,8 +97,8 @@ HeroAnalysedCard.propTypes = {
   }).isRequired,
   loading: PropTypes.bool,
   analyserObj: PropTypes.shape({
-    query: PropTypes.string.isRequired,
-    response: PropTypes.string.isRequired,
+    query: PropTypes.string,
+    response: PropTypes.string,
   }).isRequired,
   disabled: PropTypes.bool,
   position: PropTypes.shape({

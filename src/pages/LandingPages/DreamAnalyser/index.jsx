@@ -34,62 +34,57 @@ import {
   apiCallsLeft,
   formatQuery,
   formatterAnalysedDream,
-  getAnalysedDreamsFromDB,
-  saveAnalysedDreamToLocalStorageUpdateState,
+  saveAnalysedDreamToLocalStorage,
 } from "/@//helpers";
 import { ANALYSER_INPUT_MAX_CHARS, DEFAULT_MAX_API_CALLS } from "/@//constants";
-import { useSupabaseSession } from "/@//auth/client";
+
+function validateInput(input, length) {
+  if (input.length < length) {
+    alert("Please use at least 20 characters to describe your dream.");
+    return false;
+  }
+  return true;
+}
 
 function DreamAnalyser() {
   const [query, setQuery] = useState("");
   const [context, setContext] = useState("");
   const [savedDreams, setSavedDreams] = useState([]);
-  const [response, setResponse] = useState("");
-  const [userSession, setUserSession] = useState(null);
+  const [lastAnalysedDream, setLastAnalysedDream] = useState({});
   const [loading, setLoading] = useState(false);
-
-  const { session } = useSupabaseSession();
-  // const session = null;
 
   document.title = "Dream Analyser | UYD";
 
   useEffect(() => {
     const fetchData = async () => {
-      session && setUserSession(session);
-
-      if (session) {
-        const analysedDreamsDB = await getAnalysedDreamsFromDB(session);
-        console.log("analysedDreamsDB", analysedDreamsDB);
-        setSavedDreams(analysedDreamsDB);
-      } else {
-        const analysedDreamsLocal = JSON.parse(localStorage.getItem("uyd_saved"));
-        console.log("analysedDreamsLocal", analysedDreamsLocal);
-        analysedDreamsLocal && setSavedDreams(analysedDreamsLocal);
-      }
-      console.log("Session", session);
+      const analysedDreamsLocal = JSON.parse(localStorage.getItem("uyd_saved"));
+      console.log("analysedDreamsLocal", analysedDreamsLocal);
+      analysedDreamsLocal && setSavedDreams(analysedDreamsLocal);
     };
-
     fetchData();
   }, []);
 
   const handleSubmit = async (e, analyser, context) => {
     e.preventDefault();
     setLoading(true);
-    // validate 10 chars each
+    if (!validateInput(analyser.value, 20)) {
+      setLoading(false);
+      return;
+    }
+
     try {
       if (apiCallsLeft(savedDreams, DEFAULT_MAX_API_CALLS) > 0) {
         const formattedQuery = formatQuery(analyser.value, context.value);
         const dreamResponse = await analyseDream(formattedQuery);
         console.log(dreamResponse);
-        setResponse(dreamResponse);
         const analysedDream = formatterAnalysedDream({
           query,
           analysedDream: dreamResponse,
-          session,
+          session: null,
         });
-        session
-          ? await publishAnalysedDream(analysedDream)
-          : saveAnalysedDreamToLocalStorageUpdateState(analysedDream, setSavedDreams);
+        setLastAnalysedDream(analysedDream);
+        await publishAnalysedDream(analysedDream);
+        saveAnalysedDreamToLocalStorage(analysedDream, setSavedDreams);
         if (apiCallsLeft(savedDreams, DEFAULT_MAX_API_CALLS) === 1) {
           alert(`You have one more dream to analyse for today! 1️⃣`);
         }
@@ -167,10 +162,13 @@ function DreamAnalyser() {
             maxLength: ANALYSER_INPUT_MAX_CHARS,
             value: query,
             placeholderText: "I was flying in the sky and then I fell down and after...",
-            onChange: (e) => setQuery(e.target.value),
+            onChange: (e) => {
+              e.preventDefault();
+              setQuery(e.target.value);
+            },
           }}
           context={{
-            title: "Add Context here",
+            title: "(Optional) Add Context here",
             maxLength: 300,
             placeholderText: "Context placeholder text",
             onChange: (e) => setContext(e.target.value),
@@ -181,10 +179,9 @@ function DreamAnalyser() {
           placeholderText="I was flying in the sky and then I fell down and after.. "
         />
         <AnalyserResponse
-          responseText={response}
-          query={query}
+          analysedDream={lastAnalysedDream}
           loading={loading}
-          disabled={!(loading || response)}
+          disabled={!(loading || lastAnalysedDream)}
         />
         <RecentlyAnalysedDreams
           dreams={savedDreams}

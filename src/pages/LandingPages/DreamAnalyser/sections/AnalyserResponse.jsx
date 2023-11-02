@@ -4,13 +4,14 @@ import team1 from "assets/images/team-5.jpg";
 import MKBox from "components/MKBox";
 import PropTypes from "prop-types";
 
-function AnalyserResponse({ query, responseText, disabled = false, loading = false }) {
+function AnalyserResponse({ analysedDream, disabled = false, loading = false }) {
+  const { query, response } = analysedDream;
   return (
     <MKBox>
       <HeroAnalysedCard
         disabled={disabled}
         loading={loading}
-        analyserObj={{ query: query, response: responseText }}
+        analyserObj={{ query: query, response: response }}
         image={team1}
         badge={{ content: "new", color: "info" }}
         position={{ color: "info", label: "UI Designer" }}
@@ -20,8 +21,7 @@ function AnalyserResponse({ query, responseText, disabled = false, loading = fal
 }
 
 AnalyserResponse.propTypes = {
-  query: PropTypes.string.isRequired,
-  responseText: PropTypes.string.isRequired,
+  analysedDream: PropTypes.object,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
 };

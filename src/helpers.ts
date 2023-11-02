@@ -50,7 +50,7 @@ export function formatterAnalysedDream({
 }): AnalysedDream {
   return {
     id: "UYD" + String(Math.floor(Math.random() * 100) + 1) + String(Date.now()).substring(0, 8),
-    userId: session?.user.id,
+    userId: session?.user.id || "POC",
     query,
     response: analysedDream,
     date: new Date().toISOString(),
@@ -61,7 +61,7 @@ export function formatQuery(query: string, userContext: string) {
   return BOT_INSTRUCTIONS + "; question is " + query + "; context is: " + userContext;
 }
 
-export const saveAnalysedDreamToLocalStorageUpdateState = (
+export const saveAnalysedDreamToLocalStorage = (
   analysedDream: AnalysedDream,
   setterFunc: React.Dispatch<React.SetStateAction<AnalysedDream[]>>
 ) => {
