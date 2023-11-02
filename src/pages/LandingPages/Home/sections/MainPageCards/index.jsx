@@ -37,7 +37,7 @@ function MainPageCards() {
         </Grid>
         <Grid container spacing={3} mt={3}>
           <Grid item xs={12} lg={4}>
-            <Link to="/pages/landing-pages/dream-analyser">
+            <Link to="/dream-analyser">
               <SectionCards
                 image="https://images.unsplash.com/photo-1695119592276-ea0f8241372f"
                 title="Free Dream Analyser"
@@ -47,7 +47,7 @@ function MainPageCards() {
             </Link>
           </Grid>
           <Grid item xs={12} lg={4}>
-            <Link to="/pages/guides">
+            <Link to="/guides">
               <SectionCards
                 image="https://images.unsplash.com/photo-1690993660127-1a7cdd87ec9e"
                 title="Dreaming Guides & FAQs"

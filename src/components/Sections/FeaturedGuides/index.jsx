@@ -18,7 +18,7 @@ import MKTypography from "components/MKTypography";
 function BlogPostTwo() {
   const actionProps = {
     type: "internal",
-    route: "/pages/guides/having-nightmares",
+    route: "guides/having-nightmares",
     color: "primary",
     label: "read more",
   };
@@ -48,7 +48,7 @@ function BlogPostTwo() {
                 image={product1}
                 title="Teeth Falling Out"
                 description="Teeth are closely associated with our sense of identity, so if we feel insecure about our appearance, it can manifest as teeth falling out in a..."
-                action={{ ...actionProps, route: "/pages/guides/teeth-falling-out" }}
+                action={{ ...actionProps, route: "/guides/teeth-falling-out" }}
               />
             </MKBox>
           </Grid>
@@ -58,7 +58,7 @@ function BlogPostTwo() {
                 image={product3}
                 title="Recurring Dreams"
                 description="Recurring dreams can often feel like déjà vu, as if you’ve had the same dream before. They may be so vivid and intense that they seem like memories. While the exact meaning..."
-                action={{ ...actionProps, route: "/pages/guides/recurring-dreams" }}
+                action={{ ...actionProps, route: "/guides/recurring-dreams" }}
               />
             </MKBox>
           </Grid>
