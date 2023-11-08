@@ -6,8 +6,6 @@ import PropTypes from "prop-types";
 // @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
@@ -75,8 +73,6 @@ function HeroAnalysedCard({
                 {analyserObj.context}
               </MKTypography>
             )}
-            <FavoriteIcon />
-            <DeleteIcon />
           </MKBox>
         </Grid>
       </Grid>
