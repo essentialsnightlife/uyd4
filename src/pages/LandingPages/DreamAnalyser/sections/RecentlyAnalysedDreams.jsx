@@ -54,6 +54,7 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
                   query={dream.query}
                   date={{ color: "secondary", label: formatDate(dream.date) }}
                   response={dream.response}
+                  context={dream.context}
                 />
               </MKBox>
             </Grid>

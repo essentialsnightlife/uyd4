@@ -81,6 +81,7 @@ function DreamAnalyser() {
           query,
           analysedDream: dreamResponse,
           session: null,
+          context: context.value,
         });
         setLastAnalysedDream(analysedDream);
         await publishAnalysedDream(analysedDream);

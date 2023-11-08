@@ -5,13 +5,13 @@ import MKBox from "components/MKBox";
 import PropTypes from "prop-types";
 
 function AnalyserResponse({ analysedDream, disabled = false, loading = false }) {
-  const { query, response } = analysedDream;
+  const { query, response, context } = analysedDream;
   return (
     <MKBox>
       <HeroAnalysedCard
         disabled={disabled}
         loading={loading}
-        analyserObj={{ query: query, response: response }}
+        analyserObj={{ query: query, response: response, context: context }}
         image={team1}
         badge={{ content: "new", color: "info" }}
         position={{ color: "info", label: "UI Designer" }}

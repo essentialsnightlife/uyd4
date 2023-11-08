@@ -70,6 +70,11 @@ function HeroAnalysedCard({
             <MKTypography variant="body2" color="text">
               {analyserObj.query}
             </MKTypography>
+            {analyserObj.context && (
+              <MKTypography variant="body3" color="text">
+                {analyserObj.context}
+              </MKTypography>
+            )}
             <FavoriteIcon />
             <DeleteIcon />
           </MKBox>
@@ -99,6 +104,7 @@ HeroAnalysedCard.propTypes = {
   analyserObj: PropTypes.shape({
     query: PropTypes.string,
     response: PropTypes.string,
+    context: PropTypes.string,
   }).isRequired,
   disabled: PropTypes.bool,
   position: PropTypes.shape({

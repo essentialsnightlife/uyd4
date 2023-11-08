@@ -43,15 +43,18 @@ export function formatterAnalysedDream({
   query,
   analysedDream,
   session,
+  context,
 }: {
   query: string;
   analysedDream: string;
   session: Session | null;
+  context?: string | null;
 }): AnalysedDream {
   return {
     id: "UYD" + String(Math.floor(Math.random() * 100) + 1) + String(Date.now()).substring(0, 8),
     userId: session?.user.id || "POC",
     query,
+    context,
     response: analysedDream,
     date: new Date().toISOString(),
   };

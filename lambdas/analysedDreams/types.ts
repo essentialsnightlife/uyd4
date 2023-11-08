@@ -4,4 +4,5 @@ export type AnalysedDream = {
   query: string;
   response: string;
   date: string;
+  context?: string | null;
 };

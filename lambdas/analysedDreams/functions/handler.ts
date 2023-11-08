@@ -17,11 +17,10 @@ export async function save(event: any) {
   console.log("event", event);
   console.log("Object.keys(event) ", Object.keys(event));
 
-  // const { id, userId, query, response, date } = event; // for local testing
-  const { id, userId, query, response, date } = JSON.parse(event.Records[0].Sns.Message);
+  const { id, userId, query, response, date, context } = JSON.parse(event.Records[0].Sns.Message);
 
   if (!id) {
-    const { id, userId, query, response, date } = event; // for local testing
+    const { id, userId, query, response, date, context } = event; // for local testing
   }
 
   const newAnalysedDream = {
@@ -30,6 +29,7 @@ export async function save(event: any) {
     query: { S: query },
     response: { S: response },
     date: { S: date },
+    context: { S: context },
   };
   console.log("newAnalysedDream: ", newAnalysedDream);
 
@@ -38,6 +38,7 @@ export async function save(event: any) {
   //   id: 'UYD1630546800000',
   //   userId: '612f1b0a1c9d5b006a0f1b9e',
   //   query: 'I dreamt was eating the sandwich and then I woke up.',
+  //   context: 'I was in the kitchen'
   //   response: 'You are a very creative person.'
   //   date: '2021-09-01T00:00:00.000Z'
   // }
