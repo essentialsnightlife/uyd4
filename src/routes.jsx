@@ -9,14 +9,14 @@ import ContactUs from "src/layouts/pages/support/contact-us";
 import Privacy from "src/layouts/pages/support/privacy";
 import AboutEx from "pages/Guides/AboutEx/index.jsx";
 import DreamAnalyser from "pages/LandingPages/DreamAnalyser";
-import SavedDreams from "pages/LandingPages/SavedDreams";
+// import SavedDreams from "pages/LandingPages/SavedDreams";
 import GuidesHome from "pages/LandingPages/GuidesHome";
 import Home from "pages/LandingPages/Home";
 // import VideosHome from "pages/LandingPages/VideosHome";
 
 // Account
-import SignInBasicPage from "src/layouts/authentication/sign-in/basic";
-import SignUpPage from "layouts/authentication/sign-in/basic/sign-up-page";
+// import SignInBasicPage from "src/layouts/authentication/sign-in/basic";
+// import SignUpPage from "layouts/authentication/sign-in/basic/sign-up-page";
 import TeethFallingOut from "pages/Guides/TeethFallingOut";
 import SpiritualAboutEx from "pages/Guides/SpiritualAboutEx";
 import LucidDreams from "pages/Guides/LucidDreams";
@@ -33,26 +33,21 @@ const routes = [
     name: "pages",
     icon: <Icon>dashboard</Icon>,
     columns: 2,
-    rowsPerColumn: 1,
+    rowsPerColumn: 2,
     collapse: [
       {
-        name: "landing pages",
+        name: "personal insights",
         collapse: [
           {
-            name: "home",
-            route: "/",
-            component: <Home />,
-          },
-          {
             name: "dream analyser",
-            route: "/dream-analyser",
+            route: "/",
             component: <DreamAnalyser />,
           },
-          {
-            name: "saved dreams",
-            route: "/saved-dreams",
-            component: <SavedDreams />,
-          },
+          // {
+          //   name: "home",
+          //   route: "/",
+          //   component: <Home />,
+          // },
           // {
           //   name: "videos",
           //   route: "/videos",
@@ -62,6 +57,19 @@ const routes = [
             name: "guides",
             route: "/guides",
             component: <GuidesHome />,
+          },
+        ],
+      },
+      {
+        name: "main",
+        collapse: [
+          {
+            name: "home",
+            route: "/",
+            component: <Home />,
+          },
+          {
+            name: "shop (coming soon)",
           },
         ],
       },
@@ -138,22 +146,22 @@ const routes = [
       },
     ],
   },
-  {
-    name: "account",
-    icon: <Icon>contacts</Icon>,
-    collapse: [
-      {
-        name: "sign in",
-        route: "/sign-in",
-        component: <SignInBasicPage />,
-      },
-      {
-        name: "sign up",
-        route: "/sign-up",
-        component: <SignUpPage />,
-      },
-    ],
-  },
+  // {
+  //   name: "account",
+  //   icon: <Icon>contacts</Icon>,
+  //   collapse: [
+  //     {
+  //       name: "sign in",
+  //       route: "/sign-in",
+  //       component: <SignInBasicPage />,
+  //     },
+  //     {
+  //       name: "sign up",
+  //       route: "/sign-up",
+  //       component: <SignUpPage />,
+  //     },
+  //   ],
+  // },
 ];
 
 export default routes;
