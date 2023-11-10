@@ -13,7 +13,7 @@ import MKTypography from "../../MKTypography";
 
 // @mui material components
 import DeleteIcon from "@mui/icons-material/Delete";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+// import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function RecentlyAnalysedDreamCard({ query, date, response, context }) {
   return (
@@ -36,7 +36,7 @@ function RecentlyAnalysedDreamCard({ query, date, response, context }) {
           </MKBox>
         </Grid>
         <Grid item xs={12} md={12} lg={12} xl={12} pr={4} pl={{ xs: 4, lg: 1 }}>
-          <FavoriteIcon />
+          {/*<FavoriteIcon />*/}
           <DeleteIcon />
         </Grid>
       </Grid>
