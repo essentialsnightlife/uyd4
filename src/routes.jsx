@@ -40,7 +40,7 @@ const routes = [
         collapse: [
           {
             name: "dream analyser",
-            route: "/",
+            route: "/dream-analyser",
             component: <DreamAnalyser />,
           },
           // {
