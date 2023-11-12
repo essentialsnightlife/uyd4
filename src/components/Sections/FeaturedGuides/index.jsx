@@ -5,15 +5,15 @@ import Grid from "@mui/material/Grid";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
+import MKTypography from "components/MKTypography";
 
 // Material Kit 2 PRO React components
 import SimpleBookingCard from "examples/Cards/BookingCards/SimpleBookingCard";
 
 // Images
-import product1 from "assets/images/products/product-1-min.jpg";
-import product2 from "assets/images/products/product-2-min.jpg";
-import product3 from "assets/images/products/product-3-min.jpg";
-import MKTypography from "components/MKTypography";
+const product2 = "https://images.unsplash.com/photo-1550767988-929d81a0a090";
+const product1 = "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04";
+const product3 = "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba";
 
 function BlogPostTwo() {
   const actionProps = {
