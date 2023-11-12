@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -17,6 +16,7 @@ import DefaultFooter from "components/Footers/DefaultFooter";
 // Sections
 import Analyser from "pages/LandingPages/DreamAnalyser/sections/Analyser";
 import RecentlyAnalysedDreams from "pages/LandingPages/DreamAnalyser/sections/RecentlyAnalysedDreams.jsx";
+
 import DreamStats from "pages/LandingPages/DreamAnalyser/sections/DreamStats";
 import GetFeedback from "src/components/Sections/GetFeedback";
 
@@ -46,10 +46,11 @@ function validateInput(input, length) {
   return true;
 }
 
-function DreamAnalyser() {
+export const DreamAnalyser = () => {
   const [query, setQuery] = useState("");
   const [context, setContext] = useState("");
   const [savedDreams, setSavedDreams] = useState([]);
+
   const [lastAnalysedDream, setLastAnalysedDream] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -198,6 +199,4 @@ function DreamAnalyser() {
       </MKBox>
     </>
   );
-}
-
-export default DreamAnalyser;
+};
