@@ -20,8 +20,8 @@ import GetFeedback from "src/components/Sections/GetFeedback";
 import DefaultFooter from "components/Footers/DefaultFooter";
 
 // Sections
-import ViewVideos from "components/Sections/ViewVideos";
 import DreamsOverview from "pages/LandingPages/Home/sections/DreamsOverview";
+import ContentRequest from "pages/LandingPages/Home/sections/ContentRequest";
 
 // Routes
 import routes from "routes";
@@ -89,7 +89,7 @@ function Home() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <ViewVideos />
+        <ContentRequest />
         <DreamsOverview />
         <GetFeedback />
       </Card>

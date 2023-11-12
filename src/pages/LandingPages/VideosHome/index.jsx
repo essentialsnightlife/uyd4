@@ -33,7 +33,7 @@ import footerRoutes from "src/footer";
 import bgImage from "assets/images/bg-rental.jpeg";
 
 function VideosHome() {
-  document.title = "Videos | UYD";
+  document.title = "ContentRequest | UYD";
 
   return (
     <>

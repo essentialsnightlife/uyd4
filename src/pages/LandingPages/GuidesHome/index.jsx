@@ -16,7 +16,7 @@ import DefaultFooter from "components/Footers/DefaultFooter";
 // Sections
 import FeaturedGuides from "components/Sections/FeaturedGuides";
 import ListOfGuides from "components/Sections/ListofGuides";
-import Newsletter from "components/Sections/Newsletter";
+import PromoDreamAnalyser from "components/Sections/PromoDreamAnalyser";
 
 // Routes
 import routes from "routes";
@@ -64,7 +64,7 @@ function GuidesHome() {
                 },
               })}
             >
-              Guides
+              Dreaming Guides
             </MKTypography>
             <MKTypography variant="body1" color="white" mt={1}>
               Make sense of your nighttime experiences with our informative guides to popular
@@ -87,7 +87,7 @@ function GuidesHome() {
       >
         <FeaturedGuides />
         <ListOfGuides />
-        <Newsletter />
+        <PromoDreamAnalyser />
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
