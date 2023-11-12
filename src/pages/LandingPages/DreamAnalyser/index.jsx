@@ -49,7 +49,40 @@ function validateInput(input, length) {
 export const DreamAnalyser = () => {
   const [query, setQuery] = useState("");
   const [context, setContext] = useState("");
-  const [savedDreams, setSavedDreams] = useState([]);
+  const [savedDreams, setSavedDreams] = useState([
+    {
+      id: "UYD1630546800000",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "I dreamt was eating the sandwich and then I woke up.",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+    {
+      id: "123",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "aaaaa",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+    {
+      id: "21313",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "dsadasd",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+    {
+      id: "1233",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "bbbb",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+  ]);
 
   const [lastAnalysedDream, setLastAnalysedDream] = useState({});
   const [loading, setLoading] = useState(false);
@@ -189,8 +222,8 @@ export const DreamAnalyser = () => {
           dreams={savedDreams}
           title="Recently Analysed Dreams"
           subtitle="Get a glimpse into your subconscious mind with our insightful interpretations."
-          count={6}
         />
+
         <DreamStats />
         <GetFeedback />
       </Card>
