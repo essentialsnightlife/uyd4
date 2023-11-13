@@ -8,8 +8,6 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ContactUs from "src/layouts/pages/support/contact-us";
 import Privacy from "src/layouts/pages/support/privacy";
 import AboutEx from "pages/Guides/AboutEx/index.jsx";
-// import DreamAnalyser from "pages/LandingPages/DreamAnalyser";
-import { DreamAnalyser } from "./loadable";
 // import SavedDreams from "pages/LandingPages/SavedDreams";
 import GuidesHome from "pages/LandingPages/GuidesHome";
 import Home from "pages/LandingPages/Home";
@@ -27,13 +25,8 @@ import DeathRelatedDreams from "pages/Guides/DeathRelatedDreams";
 import FlyingDreams from "pages/Guides/FlyingDreams";
 import SnakeDreams from "pages/Guides/SnakeDreams";
 import RecurringDreams from "pages/Guides/RecurringDreams";
-// import ResetPasswordPage from "src/layouts/authentication/reset-password/cover";
 
-// const handleCatchChunkError = () => {
-//   window.location.reload();
-
-//   return { default: CircularIndeterminate };
-// };
+import { DreamAnalyser } from "./loadable";
 
 const routes = [
   {
