@@ -8,6 +8,7 @@ import Icon from "@mui/material/Icon";
 
 // Material Kit 2 React components
 import MKBox from "src/components/MKBox";
+import MKButton from "components/MKButton";
 import MKTypography from "src/components/MKTypography";
 
 // Material Kit 2 React examples
@@ -16,14 +17,11 @@ import PropTypes from "prop-types";
 
 // Helpers
 import { formatDate } from "/@//helpers";
+import { Box, Pagination } from "@mui/material";
+import { usePagination } from "../util";
 
-const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
-  dreams,
-  title,
-  subtitle,
-  count = 10,
-}) {
-  dreams.sort((a, b) => new Date(b.date) - new Date(a.date));
+const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({ dreams, title, subtitle }) {
+  const { handleChange, prev, next, data, arrayPages, count, currentPage } = usePagination(dreams);
 
   return (
     <MKBox
@@ -47,7 +45,7 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
           </Grid>
         </Grid>
         <Grid container spacing={3}>
-          {dreams.splice(0, count).map((dream, i) => (
+          {data.map((dream, i) => (
             <Grid key={i} item xs={12} lg={6}>
               <MKBox mb={1}>
                 <RecentlyAnalysedDreamCard
@@ -60,6 +58,46 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
             </Grid>
           ))}
         </Grid>
+
+        {/* Option 1 */}
+        {/* <Pagination
+          count={count}
+          size="large"
+          page={currentPage}
+          variant="outlined"
+          shape="rounded"
+          onChange={handleChange}
+        /> */}
+
+        {/* Option 2 */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 1,
+            marginTop: 5,
+          }}
+        >
+          <MKButton variant="contained" onClick={prev} disabled={currentPage === 1}>
+            Previous
+          </MKButton>
+
+          {arrayPages.map((page) => (
+            <MKButton
+              key={page}
+              onClick={() => handleChange(undefined, page)}
+              color={`${page === currentPage ? "dark" : "white"}`}
+            >
+              {page}
+            </MKButton>
+          ))}
+
+          <MKButton variant="contained" onClick={next} disabled={currentPage === count}>
+            Next
+          </MKButton>
+        </Box>
+
         <MKBox mt={2}>
           <MKTypography
             component="a"
@@ -104,7 +142,6 @@ RecentlyAnalysedDreams.propTypes = {
   ),
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
 };
 
 export default RecentlyAnalysedDreams;

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -17,6 +16,7 @@ import DefaultFooter from "components/Footers/DefaultFooter";
 // Sections
 import Analyser from "pages/LandingPages/DreamAnalyser/sections/Analyser";
 import RecentlyAnalysedDreams from "pages/LandingPages/DreamAnalyser/sections/RecentlyAnalysedDreams.jsx";
+
 import DreamStats from "pages/LandingPages/DreamAnalyser/sections/DreamStats";
 import GetFeedback from "src/components/Sections/GetFeedback";
 
@@ -46,10 +46,44 @@ function validateInput(input, length) {
   return true;
 }
 
-function DreamAnalyser() {
+export const DreamAnalyser = () => {
   const [query, setQuery] = useState("");
   const [context, setContext] = useState("");
-  const [savedDreams, setSavedDreams] = useState([]);
+  const [savedDreams, setSavedDreams] = useState([
+    {
+      id: "UYD1630546800000",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "I dreamt was eating the sandwich and then I woke up.",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+    {
+      id: "123",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "aaaaa",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+    {
+      id: "21313",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "dsadasd",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+    {
+      id: "1233",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "bbbb",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+  ]);
+
   const [lastAnalysedDream, setLastAnalysedDream] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -188,8 +222,8 @@ function DreamAnalyser() {
           dreams={savedDreams}
           title="Recently Analysed Dreams"
           subtitle="Get a glimpse into your subconscious mind with our insightful interpretations."
-          count={6}
         />
+
         <DreamStats />
         <GetFeedback />
       </Card>
@@ -198,6 +232,4 @@ function DreamAnalyser() {
       </MKBox>
     </>
   );
-}
-
-export default DreamAnalyser;
+};
