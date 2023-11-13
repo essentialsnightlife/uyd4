@@ -43,7 +43,7 @@ function Steps() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1602781975725-cab34bd38d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+        "https://images.unsplash.com/photo-1696789990524-e1282ade1bf0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
       label: "Positives",
       title: "Destress",
       description:
@@ -59,7 +59,7 @@ function Steps() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
+        "https://images.unsplash.com/photo-1696835766318-e102285eb088?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
       label: "Challenges",
       title: "Loss of Power",
       description:

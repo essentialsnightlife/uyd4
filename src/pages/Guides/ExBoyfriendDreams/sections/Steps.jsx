@@ -42,7 +42,7 @@ function Steps() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1602781975725-cab34bd38d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+        "https://images.unsplash.com/photo-1696526294710-5f7da34f8a5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
       label: "Challenges",
       title: "Vulnerability",
       description: "They can represent our fear of being vulnerable in a new relationship.",
@@ -56,7 +56,7 @@ function Steps() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
+        "https://images.unsplash.com/photo-1695929978742-b7f037f9e835?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
       label: "Positives",
       title: "Overcoming strong feelings",
       description: "They can help us understand our underlying emotions.",

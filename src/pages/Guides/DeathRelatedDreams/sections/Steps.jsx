@@ -35,7 +35,7 @@ function Steps() {
   const slides = [
     {
       image:
-        "https://images.unsplash.com/photo-1609365635346-524d0024684f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
+        "https://images.unsplash.com/photo-1569261663996-b740e60ef7ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
       label: "Challenges",
       title: "Reliving the Past",
       description: "Dreams about ex-boyfriends can symbolize our longing for the past.",
@@ -56,7 +56,7 @@ function Steps() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
+        "https://images.unsplash.com/photo-1693035647726-e8cf7467a058?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
       label: "Positives",
       title: "Overcoming strong feelings",
       description: "They can help us understand our underlying emotions.",

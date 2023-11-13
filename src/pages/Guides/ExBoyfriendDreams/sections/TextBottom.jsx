@@ -40,7 +40,7 @@ function TextBottom() {
             about her ex-boyfriends, referencing her personal growth and gratitude for the lessons
             learned from those relationships.
           </MKTypography>
-          <YouTubeEmbed mb={3} embedId={"tollGa3S0o8"} title={"Ariana Grande: Thank U, Next"} />
+          <YouTubeEmbed mb={3} embedId={"gl1aHhXnN1k"} title={"Ariana Grande: Thank U, Next"} />
           <MKTypography variant="body2" mb={2}>
             Dreams about ex-boyfriends can have multiple meanings, depending on the context and the
             individual&#39;s underlying continue feelings. They can symbolize our longing for
