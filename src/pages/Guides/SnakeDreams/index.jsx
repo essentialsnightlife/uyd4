@@ -78,7 +78,7 @@ function SnakeDreams() {
                 },
               })}
             >
-              Dreaming about snakes
+              Dreaming about Snakes
             </MKTypography>
             <MKTypography
               variant="body1"
