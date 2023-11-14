@@ -13,8 +13,12 @@ function TextBottom() {
     <MKBox component="section" py={6} mt={2}>
       <Container>
         <Grid container spacing={3} item xs={12} lg={8} mx="auto">
-          <MKTypography variant="body2" mb={2}>
-            Lucid dreaming in modern culture:
+          <MKTypography variant="h4" mb={2}>
+            Lucid dreaming in modern culture
+          </MKTypography>
+          <MKTypography variant="body2" mb={3}>
+            Through personal anecdotes and experiences, we gain insights into the growing popularity
+            and relevance of lucid dreaming in today&apos;s society.
           </MKTypography>
           <MKTypography variant="h5" mb={1}>
             Jennifer Aniston
@@ -25,7 +29,6 @@ function TextBottom() {
             able to shape and control the dream as it unfolds. Aniston has found lucid dreaming to
             be a fascinating and thought-provoking experience.
           </MKTypography>
-
           <MKTypography variant="h5" mb={1}>
             Tim Ferriss
           </MKTypography>
