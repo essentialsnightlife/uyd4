@@ -25,8 +25,7 @@ import DeathRelatedDreams from "pages/Guides/DeathRelatedDreams";
 import FlyingDreams from "pages/Guides/FlyingDreams";
 import SnakeDreams from "pages/Guides/SnakeDreams";
 import RecurringDreams from "pages/Guides/RecurringDreams";
-
-import { DreamAnalyser } from "./loadable";
+import DreamAnalyser from "pages/LandingPages/DreamAnalyser";
 
 const routes = [
   {

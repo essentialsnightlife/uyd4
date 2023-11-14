@@ -46,10 +46,27 @@ function validateInput(input, length) {
   return true;
 }
 
-export const DreamAnalyser = () => {
+const DreamAnalyser = () => {
   const [query, setQuery] = useState("");
   const [context, setContext] = useState("");
-  const [savedDreams, setSavedDreams] = useState([]);
+  const [savedDreams, setSavedDreams] = useState([
+    {
+      id: "UYD1630546800000",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "I dreamt was eating the sandwich and then I woke up.",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+    {
+      id: "UYD1630546800000",
+      userId: "612f1b0a1c9d5b006a0f1b9e",
+      query: "I dreamt was eating the sandwich and then I woke up.",
+      context: "I was in the kitchen",
+      response: "You are a very creative person.",
+      date: "2021-09-01T00:00:00.000Z",
+    },
+  ]);
 
   const [lastAnalysedDream, setLastAnalysedDream] = useState({});
   const [loading, setLoading] = useState(false);
@@ -190,6 +207,7 @@ export const DreamAnalyser = () => {
           title="Recently Analysed Dreams"
           subtitle="Get a glimpse into your subconscious mind with our insightful interpretations."
           count={6}
+          loading={loading}
         />
         <DreamStats />
         <GetFeedback />
@@ -200,3 +218,5 @@ export const DreamAnalyser = () => {
     </>
   );
 };
+
+export default DreamAnalyser;
