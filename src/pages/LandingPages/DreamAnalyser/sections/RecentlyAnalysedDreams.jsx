@@ -8,7 +8,6 @@ import Icon from "@mui/material/Icon";
 
 // Material Kit 2 React components
 import MKBox from "src/components/MKBox";
-import MKButton from "components/MKButton";
 import MKTypography from "src/components/MKTypography";
 
 // Material Kit 2 React examples
@@ -17,11 +16,12 @@ import PropTypes from "prop-types";
 
 // Helpers
 import { formatDate } from "/@//helpers";
-import { Box, Pagination } from "@mui/material";
-import { usePagination } from "../util";
+import { Box, Pagination, PaginationItem } from "@mui/material";
+import { usePagination } from "./util";
+import MKButton from "components/MKButton";
 
 const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({ dreams, title, subtitle }) {
-  const { handleChange, prev, next, data, arrayPages, count, currentPage } = usePagination(dreams);
+  const { handleChange, data, count, currentPage } = usePagination(dreams);
 
   return (
     <MKBox
@@ -57,46 +57,29 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({ dreams, ti
               </MKBox>
             </Grid>
           ))}
-        </Grid>
 
-        {/* Option 1 */}
-        {/* <Pagination
-          count={count}
-          size="large"
-          page={currentPage}
-          variant="outlined"
-          shape="rounded"
-          onChange={handleChange}
-        /> */}
-
-        {/* Option 2 */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: 1,
-            marginTop: 5,
-          }}
-        >
-          <MKButton variant="contained" onClick={prev} disabled={currentPage === 1}>
-            Previous
-          </MKButton>
-
-          {arrayPages.map((page) => (
-            <MKButton
-              key={page}
-              onClick={() => handleChange(undefined, page)}
-              color={`${page === currentPage ? "dark" : "white"}`}
+          {data.length && (
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: 5,
+                width: "100%",
+              }}
             >
-              {page}
-            </MKButton>
-          ))}
-
-          <MKButton variant="contained" onClick={next} disabled={currentPage === count}>
-            Next
-          </MKButton>
-        </Box>
+              <Pagination
+                color="primary"
+                size="large"
+                variant="outlined"
+                shape="rounded"
+                count={count}
+                page={currentPage}
+                renderItem={(item) => <PaginationItem {...item} />}
+                onChange={handleChange}
+              />
+            </Box>
+          )}
+        </Grid>
 
         <MKBox mt={2}>
           <MKTypography

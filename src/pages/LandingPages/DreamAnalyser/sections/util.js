@@ -21,20 +21,5 @@ export const usePagination = (data) => {
     setCurrentPage(() => Math.min(pageNumber, maxPage));
   };
 
-  // Option 2, you can remove these if you want use Pagination from MUI
-  const arrayPages = [];
-
-  for (let i = 1; i <= maxPage; i++) {
-    arrayPages.push(i);
-  }
-
-  const next = () => {
-    setCurrentPage((currentPage) => Math.min(currentPage + 1, maxPage));
-  };
-
-  const prev = () => {
-    setCurrentPage((currentPage) => Math.max(currentPage - 1, 1));
-  };
-
-  return { handleChange, next, prev, data: currentData(), count: maxPage, currentPage, arrayPages };
+  return { handleChange, data: currentData(), count: maxPage, currentPage };
 };
