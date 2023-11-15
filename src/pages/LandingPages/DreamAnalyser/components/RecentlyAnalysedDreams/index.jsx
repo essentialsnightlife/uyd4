@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import MKBox from "src/components/MKBox";
 import { Card, Grid, Skeleton } from "@mui/material";
 
-function RecentlyAnalysedDreamCardSkeleton({ count, context }) {
+function RecentlyAnalysedDreamCardSkeleton({ context }) {
   return (
-    <>
-      {Array.from({ length: count }, (_, index) => index + 1).map((n) => (
+    <Grid container spacing={3}>
+      {Array.from({ length: 6 }, (_, index) => index + 1).map((n) => (
         <Grid key={n} item xs={12} lg={6}>
           <MKBox mb={1}>
             <Card sx={{ mt: 3 }}>
@@ -38,12 +38,11 @@ function RecentlyAnalysedDreamCardSkeleton({ count, context }) {
           </MKBox>
         </Grid>
       ))}
-    </>
+    </Grid>
   );
 }
 
 RecentlyAnalysedDreamCardSkeleton.propTypes = {
-  count: PropTypes.number.isRequired,
   context: PropTypes.string,
 };
 

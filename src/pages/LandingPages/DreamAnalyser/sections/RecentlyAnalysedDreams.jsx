@@ -1,5 +1,6 @@
 import * as React from "react";
 import { memo } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -22,10 +23,23 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
   dreams,
   title,
   subtitle,
-  count = 10,
-  loading,
+  setData,
 }) {
   dreams.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const [hasMore, setHasMore] = React.useState(true);
+
+  const fetchMoreData = () => {
+    if (dreams.length >= 50) {
+      setHasMore(false);
+
+      return;
+    }
+
+    setTimeout(() => {
+      setData(dreams.concat(dreams));
+    }, 500);
+  };
 
   return (
     <MKBox
@@ -48,11 +62,20 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
             </MKTypography>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
-          {loading ? (
-            <Skeleton count={4} />
-          ) : (
-            dreams.splice(0, count).map((dream, i) => (
+
+        <InfiniteScroll
+          dataLength={dreams.length}
+          next={fetchMoreData}
+          hasMore={hasMore}
+          loader={<Skeleton />}
+          endMessage={
+            <MKTypography color="white" sx={{ textAlign: "center" }}>
+              Yay! You have seen it all
+            </MKTypography>
+          }
+        >
+          <Grid container spacing={3}>
+            {dreams.map((dream, i) => (
               <Grid key={i} item xs={12} lg={6}>
                 <MKBox mb={1}>
                   <RecentlyAnalysedDreamCard
@@ -63,9 +86,10 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
                   />
                 </MKBox>
               </Grid>
-            ))
-          )}
-        </Grid>
+            ))}
+          </Grid>
+        </InfiniteScroll>
+
         <MKBox mt={2}>
           <MKTypography
             component="a"
@@ -110,8 +134,7 @@ RecentlyAnalysedDreams.propTypes = {
   ),
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
-  loading: PropTypes.bool.isRequired,
+  setData: PropTypes.func.isRequired,
 };
 
 export default RecentlyAnalysedDreams;
