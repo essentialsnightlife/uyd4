@@ -60,33 +60,6 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
             </Grid>
           ))}
         </Grid>
-        {/*<MKBox mt={2}>*/}
-        {/*  <MKTypography*/}
-        {/*    component="a"*/}
-        {/*    href="/pages/saved-dreams"*/}
-        {/*    variant="button"*/}
-        {/*    color="white"*/}
-        {/*    fontWeight="regular"*/}
-        {/*    sx={{*/}
-        {/*      width: "max-content",*/}
-        {/*      display: "flex",*/}
-        {/*      alignItems: "center",*/}
-
-        {/*      "& .material-icons-round": {*/}
-        {/*        fontSize: "1.5rem",*/}
-        {/*        transform: "translateX(3px)",*/}
-        {/*        transition: "transform 0.2s cubic-bezier(0.34, 1.61, 0.7, 1.3)",*/}
-        {/*      },*/}
-
-        {/*      "&:hover .material-icons-round, &:focus .material-icons-round": {*/}
-        {/*        transform: "translateX(6px)",*/}
-        {/*      },*/}
-        {/*    }}*/}
-        {/*  >*/}
-        {/*    View all your saved analysed dreams here*/}
-        {/*    <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>*/}
-        {/*  </MKTypography>*/}
-        {/*</MKBox>*/}
       </Container>
     </MKBox>
   );
