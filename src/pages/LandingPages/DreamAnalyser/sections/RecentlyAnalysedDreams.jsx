@@ -17,28 +17,23 @@ import PropTypes from "prop-types";
 
 // Helpers
 import { formatDate } from "/@//helpers";
-import Skeleton from "../components/RecentlyAnalysedDreams";
+import RecentlyAnalysedDreamCardSkeletonLoader from "components/SkeletonLoader/RecentlyAnalysedDreamCardSkeletonLoader";
 
-const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
-  dreams,
-  title,
-  subtitle,
-  setData,
-}) {
+const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({ dreams, title, subtitle }) {
   dreams.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  const [loadedDreams, setLoadedDreams] = React.useState(8);
   const [hasMore, setHasMore] = React.useState(true);
 
   const fetchMoreData = () => {
-    if (dreams.length >= 50) {
+    if (loadedDreams >= dreams.length) {
       setHasMore(false);
-
       return;
     }
 
     setTimeout(() => {
-      setData(dreams.concat(dreams));
-    }, 500);
+      setLoadedDreams(loadedDreams + 4);
+    }, 200);
   };
 
   return (
@@ -64,18 +59,18 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
         </Grid>
 
         <InfiniteScroll
-          dataLength={dreams.length}
+          dataLength={loadedDreams}
           next={fetchMoreData}
           hasMore={hasMore}
-          loader={<Skeleton />}
+          loader={<RecentlyAnalysedDreamCardSkeletonLoader />}
           endMessage={
             <MKTypography color="white" sx={{ textAlign: "center" }}>
-              Yay! You have seen it all
+              All your saved dreams have been loaded ☁️
             </MKTypography>
           }
         >
           <Grid container spacing={3}>
-            {dreams.map((dream, i) => (
+            {dreams.slice(0, loadedDreams).map((dream, i) => (
               <Grid key={i} item xs={12} lg={6}>
                 <MKBox mb={1}>
                   <RecentlyAnalysedDreamCard

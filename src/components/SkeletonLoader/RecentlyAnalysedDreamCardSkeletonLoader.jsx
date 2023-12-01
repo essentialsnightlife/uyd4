@@ -1,12 +1,12 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import MKBox from "src/components/MKBox";
+import MKBox from "components/MKBox";
 import { Card, Grid, Skeleton } from "@mui/material";
 
-function RecentlyAnalysedDreamCardSkeleton({ context }) {
+function RecentlyAnalysedDreamCardSkeletonLoader({ context }) {
   return (
     <Grid container spacing={3}>
-      {Array.from({ length: 6 }, (_, index) => index + 1).map((n) => (
+      {Array.from({ length: 4 }, (_, index) => index + 1).map((n) => (
         <Grid key={n} item xs={12} lg={6}>
           <MKBox mb={1}>
             <Card sx={{ mt: 3 }}>
@@ -42,8 +42,8 @@ function RecentlyAnalysedDreamCardSkeleton({ context }) {
   );
 }
 
-RecentlyAnalysedDreamCardSkeleton.propTypes = {
+RecentlyAnalysedDreamCardSkeletonLoader.propTypes = {
   context: PropTypes.string,
 };
 
-export default RecentlyAnalysedDreamCardSkeleton;
+export default RecentlyAnalysedDreamCardSkeletonLoader;
