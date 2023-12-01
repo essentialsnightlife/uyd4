@@ -1,10 +1,11 @@
 import * as React from "react";
 import { memo } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-// import Icon from "@mui/material/Icon";
+import Icon from "@mui/material/Icon";
 
 // Material Kit 2 React components
 import MKBox from "src/components/MKBox";
@@ -16,14 +17,24 @@ import PropTypes from "prop-types";
 
 // Helpers
 import { formatDate } from "/@//helpers";
+import RecentlyAnalysedDreamCardSkeletonLoader from "components/SkeletonLoader/RecentlyAnalysedDreamCardSkeletonLoader";
 
-const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
-  dreams,
-  title,
-  subtitle,
-  count = 10,
-}) {
+const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({ dreams, title, subtitle }) {
   dreams.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const [loadedDreams, setLoadedDreams] = React.useState(8);
+  const [hasMore, setHasMore] = React.useState(true);
+
+  const fetchMoreData = () => {
+    if (loadedDreams >= dreams.length) {
+      setHasMore(false);
+      return;
+    }
+
+    setTimeout(() => {
+      setLoadedDreams(loadedDreams + 4);
+    }, 200);
+  };
 
   return (
     <MKBox
@@ -46,20 +57,61 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
             </MKTypography>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
-          {dreams.splice(0, count).map((dream, i) => (
-            <Grid key={i} item xs={12} lg={6}>
-              <MKBox mb={1}>
-                <RecentlyAnalysedDreamCard
-                  query={dream.query}
-                  date={{ color: "secondary", label: formatDate(dream.date) }}
-                  response={dream.response}
-                  context={dream.context}
-                />
-              </MKBox>
-            </Grid>
-          ))}
-        </Grid>
+
+        <InfiniteScroll
+          dataLength={loadedDreams}
+          next={fetchMoreData}
+          hasMore={hasMore}
+          loader={<RecentlyAnalysedDreamCardSkeletonLoader />}
+          endMessage={
+            <MKTypography color="white" sx={{ textAlign: "center" }}>
+              All your saved dreams have been loaded ☁️
+            </MKTypography>
+          }
+        >
+          <Grid container spacing={3}>
+            {dreams.slice(0, loadedDreams).map((dream, i) => (
+              <Grid key={i} item xs={12} lg={6}>
+                <MKBox mb={1}>
+                  <RecentlyAnalysedDreamCard
+                    query={dream.query}
+                    date={{ color: "secondary", label: formatDate(dream.date) }}
+                    response={dream.response}
+                    context={dream.context}
+                  />
+                </MKBox>
+              </Grid>
+            ))}
+          </Grid>
+        </InfiniteScroll>
+
+        <MKBox mt={2}>
+          <MKTypography
+            component="a"
+            href="/pages/landing-pages/dream-analyser"
+            variant="button"
+            color="white"
+            fontWeight="regular"
+            sx={{
+              width: "max-content",
+              display: "flex",
+              alignItems: "center",
+
+              "& .material-icons-round": {
+                fontSize: "1.5rem",
+                transform: "translateX(3px)",
+                transition: "transform 0.2s cubic-bezier(0.34, 1.61, 0.7, 1.3)",
+              },
+
+              "&:hover .material-icons-round, &:focus .material-icons-round": {
+                transform: "translateX(6px)",
+              },
+            }}
+          >
+            View all your saved analysed dreams here
+            <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
+          </MKTypography>
+        </MKBox>
       </Container>
     </MKBox>
   );
@@ -77,7 +129,7 @@ RecentlyAnalysedDreams.propTypes = {
   ),
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
+  setData: PropTypes.func.isRequired,
 };
 
 export default RecentlyAnalysedDreams;

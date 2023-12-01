@@ -19,10 +19,10 @@ export default function App() {
   const { pathname } = useLocation();
 
   // Setting page scroll to 0 when changing the route
-  useEffect(() => {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement ? (document.scrollingElement.scrollTop = 0) : null;
-  }, [pathname]);
+  // useEffect(() => {
+  //   document.documentElement.scrollTop = 0;
+  //   document.scrollingElement ? (document.scrollingElement.scrollTop = 0) : null;
+  // }, [pathname]);
 
   const getRoutes = (allRoutes: any) =>
     allRoutes.map((route: any) => {
