@@ -11,8 +11,16 @@ import MKBox from "../../MKBox";
 import MKTypography from "../../MKTypography";
 import MKButton from "../../MKButton";
 import MKInput from "../../MKInput";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 function DreamAnalyserCard({ analyser, context, action }) {
+  const [addContextDropdown, setAddContextDropdown] = React.useState(false);
+
+  const handleToggleAddContext = () => {
+    setAddContextDropdown(!addContextDropdown);
+  };
+
   return (
     <Card>
       <MKBox p={3} mt={0}>
@@ -38,28 +46,38 @@ function DreamAnalyserCard({ analyser, context, action }) {
             onChange={analyser.onChange}
           />
         </MKBox>
-        <MKTypography
-          display="block"
-          variant="5"
-          fontWeight="bold"
-          mt={1}
-          ml={0.5}
-          mb={1.5}
-          textTransform="capitalize"
+        <MKBox
+          display="flex"
+          alignItems="center"
+          onClick={handleToggleAddContext}
+          style={{ cursor: "pointer" }}
         >
-          {context.title}
-        </MKTypography>
-        <MKBox mt={1} mb={3}>
-          <MKInput
-            maxLength={context.maxLength}
-            multiline
-            rows={context.rows}
-            fullWidth
-            label={context.placeholderText}
-            value={context.value}
-            onChange={context.onChange}
-          />
+          {addContextDropdown ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
+          <MKTypography
+            display="block"
+            variant="5"
+            fontWeight="bold"
+            mt={1}
+            ml={0.5}
+            mb={1.5}
+            textTransform="capitalize"
+          >
+            {context.title}
+          </MKTypography>
         </MKBox>
+        {addContextDropdown && (
+          <MKBox mt={1} mb={3}>
+            <MKInput
+              maxLength={context.maxLength}
+              multiline
+              rows={context.rows}
+              fullWidth
+              label={context.placeholderText}
+              value={context.value}
+              onChange={context.onChange}
+            />
+          </MKBox>
+        )}
         {action.type === "external" ? (
           <MKButton
             type="submit"

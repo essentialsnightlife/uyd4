@@ -181,7 +181,7 @@ const DreamAnalyser = () => {
             },
           }}
           context={{
-            title: "(Optional) Add Context here",
+            title: "(Optional) Click to add Context here",
             maxLength: 300,
             placeholderText: "Context placeholder text",
             onChange: (e) => setContext(e.target.value),
