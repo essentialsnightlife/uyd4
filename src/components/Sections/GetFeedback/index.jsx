@@ -11,7 +11,7 @@ import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
 // Images
-import feedbackImage from "assets/images/pexels-gustavo-fring-7447075.jpg";
+const feedbackImage = "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6";
 
 function GetFeedback() {
   return (
@@ -39,7 +39,7 @@ function GetFeedback() {
           </Grid>
           <Grid item xs={12} md={5} sx={{ ml: "auto" }}>
             <MKBox position="relative">
-              <MKBox component="img" src={feedbackImage} width="100%" />
+              <MKBox component="img" src={feedbackImage} width="80%" height="80%" />
             </MKBox>
           </Grid>
         </Grid>

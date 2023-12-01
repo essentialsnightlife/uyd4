@@ -37,29 +37,30 @@ function Steps() {
       image:
         "https://images.unsplash.com/photo-1609365635346-524d0024684f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
       label: "Challenges",
-      title: "Reliving the Past",
-      description: "Dreams about ex-boyfriends can symbolize our longing for the past.",
+      title: "Navigating Loss: Healing Journey",
+      description: "Individuals may need to confront the pain of loss to move forward.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1602781975725-cab34bd38d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
       label: "Challenges",
-      title: "Vulnerability",
-      description: "They can represent our fear of being vulnerable in a new relationship.",
+      title: "Embracing Tough Memories",
+      description: "One may grapple with the fading memories of their loved ones.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
       label: "Positives",
-      title: "Resolving Issues",
-      description: "They can be a way for us to get closure on unresolved issues in the past.",
+      title: "Unseen Bonds: Rediscovering Love",
+      description: "Explore how love and connection transcends boundaries, even after death.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=974&q=80",
       label: "Positives",
-      title: "Overcoming strong feelings",
-      description: "They can help us understand our underlying emotions.",
+      title: "Realising Eternal Connections",
+      description:
+        "They may realize their bond with their loved ones extends beyond life, offering solace and hope.",
     },
   ];
 

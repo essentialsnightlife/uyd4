@@ -35,7 +35,7 @@ function Steps() {
   const slides = [
     {
       image:
-        "https://images.unsplash.com/photo-1609365635346-524d0024684f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
+        "https://images.unsplash.com/photo-1569261663996-b740e60ef7ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80",
       label: "Challenges",
       title: "Unresolved Issues",
       description:

@@ -5,7 +5,7 @@ import Icon from "@mui/material/Icon";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 
 // Pages
-import ContactUs from "src/layouts/pages/support/contact-us";
+// import ContactUs from "src/layouts/pages/support/contact-us";
 import Privacy from "src/layouts/pages/support/privacy";
 import AboutEx from "pages/Guides/AboutEx/index.jsx";
 // import SavedDreams from "pages/LandingPages/SavedDreams";
@@ -39,7 +39,7 @@ const routes = [
         collapse: [
           {
             name: "dream analyser",
-            route: "/",
+            route: "/dream-analyser",
             component: <DreamAnalyser />,
           },
           // {
@@ -75,13 +75,13 @@ const routes = [
       {
         name: "support",
         collapse: [
+          // {
+          //   name: "contact us",
+          //   route: "/support/contact-us",
+          //   component: <ContactUs />,
+          // },
           {
-            name: "contact us",
-            route: "/support/contact-us",
-            component: <ContactUs />,
-          },
-          {
-            name: "privacy",
+            name: "privacy policy",
             route: "/support/privacy",
             component: <Privacy />,
           },

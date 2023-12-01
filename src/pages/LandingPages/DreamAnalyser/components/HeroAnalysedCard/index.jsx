@@ -15,14 +15,7 @@ import MKBadge from "components/MKBadge";
 // Components
 import CircularIndeterminate from "components/LoadingCircularIndeterminate";
 
-function HeroAnalysedCard({
-  disabled = false,
-  loading = false,
-  badge,
-  analyserObj,
-  image,
-  position,
-}) {
+function HeroAnalysedCard({ disabled = false, loading = false, badge, analyserObj, image }) {
   const { query, response } = analyserObj;
 
   if (disabled || query === null || undefined) {
@@ -61,9 +54,6 @@ function HeroAnalysedCard({
               container
               sx={{ mb: 1 }}
             />
-            <MKTypography variant="h6" color={position.color} mb={1}>
-              Analysis
-            </MKTypography>
             <MKTypography variant="h5">{response}</MKTypography>
             <MKTypography variant="body2" color="text">
               {analyserObj.query}
