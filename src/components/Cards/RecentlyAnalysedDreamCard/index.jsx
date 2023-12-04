@@ -36,7 +36,7 @@ function RecentlyAnalysedDreamCard({ query, date, response, context, handleDelet
             </MKTypography>
           </MKBox>
         </Grid>
-        <Grid item xs={12} md={12} lg={12} xl={12} pr={4} pl={{ xs: 4, lg: 1 }}>
+        <Grid item xs={12} md={12} lg={12} xl={12}>
           {/*<FavoriteIcon />*/}
           <IconButton onClick={handleDeleteDream}>
             <DeleteIcon />
