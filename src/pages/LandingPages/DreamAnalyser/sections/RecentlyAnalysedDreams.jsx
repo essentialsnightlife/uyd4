@@ -19,7 +19,12 @@ import PropTypes from "prop-types";
 import { formatDate } from "/@//helpers";
 import RecentlyAnalysedDreamCardSkeletonLoader from "components/SkeletonLoader/RecentlyAnalysedDreamCardSkeletonLoader";
 
-const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({ dreams, title, subtitle }) {
+const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({
+  dreams,
+  title,
+  subtitle,
+  handleDeleteDream,
+}) {
   dreams.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const [loadedDreams, setLoadedDreams] = React.useState(8);
@@ -78,6 +83,11 @@ const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({ dreams, ti
                     date={{ color: "secondary", label: formatDate(dream.date) }}
                     response={dream.response}
                     context={dream.context}
+                    handleDeleteDream={() => {
+                      if (confirm("Are you sure you want to delete this dream record forever?")) {
+                        handleDeleteDream(dream.id);
+                      }
+                    }}
                   />
                 </MKBox>
               </Grid>
@@ -130,6 +140,7 @@ RecentlyAnalysedDreams.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   setData: PropTypes.func.isRequired,
+  handleDeleteDream: PropTypes.func.isRequired,
 };
 
 export default RecentlyAnalysedDreams;

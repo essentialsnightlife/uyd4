@@ -201,6 +201,11 @@ const DreamAnalyser = () => {
           setData={setSavedDreams}
           title="Recently Analysed Dreams"
           subtitle="Get a glimpse into your subconscious mind with our insightful interpretations."
+          handleDeleteDream={(dreamId) => {
+            const filteredDreams = savedDreams.filter((dream) => dream.id !== dreamId);
+            setSavedDreams(filteredDreams);
+            localStorage.setItem("uyd_saved", JSON.stringify(filteredDreams));
+          }}
         />
         <DreamStats />
         <GetFeedback />

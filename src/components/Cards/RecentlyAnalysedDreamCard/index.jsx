@@ -13,9 +13,10 @@ import MKTypography from "../../MKTypography";
 
 // @mui material components
 import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
 // import FavoriteIcon from "@mui/icons-material/Favorite";
 
-function RecentlyAnalysedDreamCard({ query, date, response, context }) {
+function RecentlyAnalysedDreamCard({ query, date, response, context, handleDeleteDream }) {
   return (
     <Card sx={{ mt: 3 }}>
       <Grid container>
@@ -37,7 +38,9 @@ function RecentlyAnalysedDreamCard({ query, date, response, context }) {
         </Grid>
         <Grid item xs={12} md={12} lg={12} xl={12} pr={4} pl={{ xs: 4, lg: 1 }}>
           {/*<FavoriteIcon />*/}
-          <DeleteIcon />
+          <IconButton onClick={handleDeleteDream}>
+            <DeleteIcon />
+          </IconButton>
         </Grid>
       </Grid>
     </Card>
@@ -62,6 +65,7 @@ RecentlyAnalysedDreamCard.propTypes = {
     label: PropTypes.string.isRequired,
   }).isRequired,
   response: PropTypes.string.isRequired,
+  handleDeleteDream: PropTypes.func.isRequired,
 };
 
 export default RecentlyAnalysedDreamCard;
