@@ -91,11 +91,11 @@ export async function publishAnalysedDream(analysedDream: AnalysedDream) {
     });
   }
 
-  const { id, userId, query, response, date } = analysedDream;
+  const { id, userId, query, context, response, date } = analysedDream;
   console.log("publishAnalysedDream - analysedDream obj: ", analysedDream);
   const input: PublishCommandInput = {
     TopicArn: "arn:aws:sns:eu-west-1:410317984454:AnsweredQueryTopic",
-    Message: JSON.stringify({ id, userId, query, response, date }),
+    Message: JSON.stringify({ id, userId, query, context, response, date }),
   };
 
   try {
