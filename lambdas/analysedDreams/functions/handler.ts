@@ -14,13 +14,23 @@ const dbClient = new DynamoDBClient({ region: AWS_REGION });
 const TableName = process.env.TABLE_NAME;
 
 export async function save(event: any) {
-  console.log("event", event);
   console.log("Object.keys(event) ", Object.keys(event));
 
-  const { id, userId, query, response, date, context } = JSON.parse(event.Records[0].Sns.Message);
+  let id, userId, query, response, date, context;
 
-  if (!id) {
-    const { id, userId, query, response, date, context } = event; // for local testing
+  // Check if the event is an SNS message
+  if (event.Records && event.Records[0].Sns && event.Records[0].Sns.Message) {
+    const snsMessage = JSON.parse(event.Records[0].Sns.Message);
+
+    id = snsMessage.id;
+    userId = snsMessage.userId;
+    query = snsMessage.query;
+    response = snsMessage.response;
+    date = snsMessage.date;
+    context = snsMessage.context;
+  } else {
+    // Assume event.body contains the required properties
+    ({ id, userId, query, response, date, context } = event.body);
   }
 
   const newAnalysedDream = {
