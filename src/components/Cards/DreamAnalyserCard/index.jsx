@@ -13,6 +13,8 @@ import MKButton from "../../MKButton";
 import MKInput from "../../MKInput";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import Tooltip from "@mui/material/Tooltip";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 function DreamAnalyserCard({ analyser, context, action }) {
   const [addContextDropdown, setAddContextDropdown] = React.useState(false);
@@ -24,17 +26,25 @@ function DreamAnalyserCard({ analyser, context, action }) {
   return (
     <Card>
       <MKBox p={3} mt={0}>
-        <MKTypography
-          display="block"
-          variant="5"
-          fontWeight="bold"
-          mt={1}
-          ml={0.5}
-          mb={1.5}
-          textTransform="capitalize"
-        >
-          {analyser.title}
-        </MKTypography>
+        <MKBox mt={0} display="flex" alignItems="center">
+          <Tooltip
+            title="For best results please use the word dream and be as specific and descriptive as possible when describing"
+            followCursor
+          >
+            <InfoOutlinedIcon />
+          </Tooltip>
+          <MKTypography
+            display="block"
+            variant="5"
+            fontWeight="bold"
+            mt={1}
+            ml={0.5}
+            mb={1.5}
+            textTransform="capitalize"
+          >
+            {analyser.title}
+          </MKTypography>
+        </MKBox>
         <MKBox mt={1} mb={3}>
           <MKInput
             maxLength={analyser.maxLength}
