@@ -6,7 +6,7 @@ export const BOT_INSTRUCTIONS =
   "\n" +
   "Then if there is provided context, which will explicitly add to the query or else left blank, then can we add a couple of sentences which relates the analysis or answer to the provided context? make it obvious that it is a personalised response.\n" +
   "\n" +
-  "If the question isn't related to sleeping or dreaming then reply with 'Sorry I only wake up to help you with your dreams, ask me something else! '";
+  "If the question isn't related to sleeping or dreaming then reply with 'Sorry I only wake up to help you with your dreams, ask me something related to them! '";
 
 export const DEFAULT_TEMPERATURE = 0;
 export const DEFAULT_MODEL = "gpt-3.5-turbo-instruct";
