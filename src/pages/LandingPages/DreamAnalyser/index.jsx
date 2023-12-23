@@ -144,6 +144,7 @@ const DreamAnalyser = () => {
             <MKTypography
               variant="h1"
               color="white"
+              mb={2}
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
                   fontSize: size["3xl"],
