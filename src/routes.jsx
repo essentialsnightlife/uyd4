@@ -7,6 +7,7 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 // Pages
 // import ContactUs from "src/layouts/pages/support/contact-us";
 import Privacy from "src/layouts/pages/support/privacy";
+import DisclaimersPage from "layouts/pages/support/disclaimers";
 import AboutEx from "pages/Guides/AboutEx/index.jsx";
 // import SavedDreams from "pages/LandingPages/SavedDreams";
 import GuidesHome from "pages/LandingPages/GuidesHome";
@@ -84,6 +85,11 @@ const routes = [
             name: "privacy policy",
             route: "/support/privacy",
             component: <Privacy />,
+          },
+          {
+            name: "disclaimers",
+            route: "/support/disclaimers",
+            component: <DisclaimersPage />,
           },
         ],
       },
