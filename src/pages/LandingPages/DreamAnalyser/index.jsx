@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // Material Kit 2 React components
+import SEO from "components/SEO";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
@@ -65,8 +66,6 @@ const DreamAnalyser = () => {
   const [lastAnalysedDream, setLastAnalysedDream] = useState({});
   const [loading, setLoading] = useState(false);
 
-  document.title = "Dream Analyser | UYD";
-
   useEffect(() => {
     const fetchData = async () => {
       const analysedDreamsLocal = JSON.parse(localStorage.getItem("uyd_saved"));
@@ -114,6 +113,8 @@ const DreamAnalyser = () => {
 
   return (
     <>
+      <SEO title="Dream Analyser" description="analyser desc" image="palm.jpeg" type="type" />
+
       <DefaultNavbar routes={routes} brand={"Use Your Dream"} transparent light />
       <MKBox
         minHeight="50vh"

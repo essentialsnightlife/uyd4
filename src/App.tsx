@@ -14,6 +14,7 @@ import theme from "./assets/theme";
 
 // Material Kit 2 PRO React routes
 import routes from "./routes";
+import { HelmetProvider } from "react-helmet-async";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -38,12 +39,14 @@ export default function App() {
     });
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Routes>
+          {getRoutes(routes)}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }

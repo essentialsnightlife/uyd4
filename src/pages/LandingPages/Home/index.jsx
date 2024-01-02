@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // Material Kit 2 PRO React components
+import SEO from "components/SEO";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
@@ -35,8 +36,6 @@ function Home() {
   const { session } = useSupabaseSession();
   const [, setUserSession] = useState(null);
 
-  document.title = "Home | UYD";
-
   useEffect(() => {
     setUserSession(session);
     console.log("HomeSession", session);
@@ -44,6 +43,8 @@ function Home() {
 
   return (
     <>
+      <SEO title="Home" description="desc" image="favicon.png" type="type" />
+
       <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />
       <MainPageCards />
       <MKBox
