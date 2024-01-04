@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // Material Kit 2 PRO React components
-import SEO from "components/SEO";
+import Seo from "components/Seo";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
@@ -43,7 +43,12 @@ function Home() {
 
   return (
     <>
-      <SEO title="Home" description="desc" image="favicon.png" type="type" />
+      <Seo
+        title="Home"
+        description="UYD: Free Dream Analyser and guides to understand and use your dreams more effectively"
+        type="website"
+        image="palm.jpeg"
+      />
 
       <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />
       <MainPageCards />

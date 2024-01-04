@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // Material Kit 2 React components
-import SEO from "components/SEO";
+import Seo from "components/Seo";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
@@ -113,7 +113,12 @@ const DreamAnalyser = () => {
 
   return (
     <>
-      <SEO title="Dream Analyser" description="analyser desc" image="palm.jpeg" type="type" />
+      <Seo
+        title="Dream Analyser"
+        description="Unlock the secrets of your subconscious with our dream analyzer app, guiding you towards self-discovery and inner understanding."
+        type="website"
+        image="palm.jpeg"
+      />
 
       <DefaultNavbar routes={routes} brand={"Use Your Dream"} transparent light />
       <MKBox

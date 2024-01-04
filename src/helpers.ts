@@ -86,3 +86,7 @@ export async function getAnalysedDreamsFromDB(session: Session | null) {
   console.log("responses", data.responses);
   return data.responses || [];
 }
+
+export const stripHtml = (str: string) => str.replace(/(<([^>]+)>)/gi, "");
+
+export const setTitle = (title: string) => (title ? `${title} | UYD` : "UYD");
