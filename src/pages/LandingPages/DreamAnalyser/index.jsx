@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // Material Kit 2 React components
+import Seo from "components/Seo";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
@@ -65,8 +66,6 @@ const DreamAnalyser = () => {
   const [lastAnalysedDream, setLastAnalysedDream] = useState({});
   const [loading, setLoading] = useState(false);
 
-  document.title = "Dream Analyser | UYD";
-
   useEffect(() => {
     const fetchData = async () => {
       const analysedDreamsLocal = JSON.parse(localStorage.getItem("uyd_saved"));
@@ -114,6 +113,13 @@ const DreamAnalyser = () => {
 
   return (
     <>
+      <Seo
+        title="Dream Analyser"
+        description="Unlock the secrets of your subconscious with our dream analyzer app, guiding you towards self-discovery and inner understanding."
+        type="website"
+        image="palm.jpeg"
+      />
+
       <DefaultNavbar routes={routes} brand={"Use Your Dream"} transparent light />
       <MKBox
         minHeight="50vh"
