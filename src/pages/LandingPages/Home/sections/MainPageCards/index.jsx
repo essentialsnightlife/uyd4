@@ -23,8 +23,7 @@ function MainPageCards() {
               <SectionCards
                 image="https://images.unsplash.com/photo-1695119592276-ea0f8241372f"
                 title="Free Dream Analyser"
-                description="Website visitors today demand a frictionless user expericence — especially when
-                    using search. Because of the hight standards we tend to offer."
+                description="Delve into the profound depths of your dreamscapes as our complimentary dream analysis tool sheds light on their profound significance."
               />
             </Link>
           </Grid>
@@ -33,8 +32,7 @@ function MainPageCards() {
               <SectionCards
                 image="https://images.unsplash.com/photo-1690993660127-1a7cdd87ec9e"
                 title="Dreaming Guides & FAQs"
-                description="Wealth creation is an evolutionarily recent positive-sum game. Status is an old
-                    zero-sum game. Those attacking wealth creation are often just seeking status."
+                description="Your essential resources for enhancing dream exploration and understanding - use them as a roadmap to understanding the hidden messages in your dreams. "
               />
             </Link>
           </Grid>

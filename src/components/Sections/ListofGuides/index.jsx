@@ -36,7 +36,7 @@ function ListOfGuides() {
           </Grid>
           <Grid item xs={12} md={10}>
             <FaqCollapse
-              title="Common types of Dreams"
+              title="Previous Relationships"
               open={collapse === 1}
               onClick={() => (collapse === 1 ? setCollapse(false) : setCollapse(1))}
             >
@@ -45,12 +45,13 @@ function ListOfGuides() {
                   <ListItemButton>
                     <HyperlinkAnimation
                       content={{
-                        text: "Dreaming about your ex",
+                        text: "Dreaming About Your Ex",
                         icon: "arrow_forward",
                         iconWeight: "bold",
                         fontSize: "1.19rem",
                         fontWeight: "regular",
                         color: "info",
+                        link: "guides/dreaming-about-your-ex",
                       }}
                     />
                   </ListItemButton>
@@ -59,12 +60,13 @@ function ListOfGuides() {
                   <ListItemButton>
                     <HyperlinkAnimation
                       content={{
-                        text: "Repeated Dreams",
+                        text: "Spiritual Meaning: Dreaming About Your Ex",
                         icon: "arrow_forward",
                         iconWeight: "bold",
                         fontSize: "1.19rem",
                         fontWeight: "regular",
                         color: "info",
+                        link: "guides/spiritual-meaning-dreaming-about-ex",
                       }}
                     />
                   </ListItemButton>
@@ -73,12 +75,13 @@ function ListOfGuides() {
                   <ListItemButton>
                     <HyperlinkAnimation
                       content={{
-                        text: "Teeth falling out",
+                        text: "Ex Boyfriend Dreams",
                         icon: "arrow_forward",
                         iconWeight: "bold",
                         fontSize: "1.19rem",
                         fontWeight: "regular",
                         color: "info",
+                        link: "guides/ex-boyfriend-dreams",
                       }}
                     />
                   </ListItemButton>
@@ -86,7 +89,7 @@ function ListOfGuides() {
               </List>
             </FaqCollapse>
             <FaqCollapse
-              title="Lucid Dreaming"
+              title="Symbolic Dreams"
               open={collapse === 2}
               onClick={() => (collapse === 2 ? setCollapse(false) : setCollapse(2))}
             >
@@ -95,12 +98,43 @@ function ListOfGuides() {
                   <ListItemButton>
                     <HyperlinkAnimation
                       content={{
-                        text: "Introduction to Lucid Dreaming",
+                        text: "Death Related Dreams",
                         icon: "arrow_forward",
                         iconWeight: "bold",
                         fontSize: "1.19rem",
                         fontWeight: "regular",
                         color: "info",
+                        link: "guides/death-related-dreams",
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <HyperlinkAnimation
+                      content={{
+                        text: "Dreams About Snakes",
+                        icon: "arrow_forward",
+                        iconWeight: "bold",
+                        fontSize: "1.19rem",
+                        fontWeight: "regular",
+                        color: "info",
+                        link: "guides/dreams-about-snakes",
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <HyperlinkAnimation
+                      content={{
+                        text: "Teeth Falling Out",
+                        icon: "arrow_forward",
+                        iconWeight: "bold",
+                        fontSize: "1.19rem",
+                        fontWeight: "regular",
+                        color: "info",
+                        link: "guides/teeth-falling-out",
                       }}
                     />
                   </ListItemButton>
@@ -108,7 +142,7 @@ function ListOfGuides() {
               </List>
             </FaqCollapse>
             <FaqCollapse
-              title="Nightmares"
+              title="Various Dream Experiences"
               open={collapse === 3}
               onClick={() => (collapse === 3 ? setCollapse(false) : setCollapse(3))}
             >
@@ -117,12 +151,58 @@ function ListOfGuides() {
                   <ListItemButton>
                     <HyperlinkAnimation
                       content={{
-                        text: "Having Nightmares Explained",
+                        text: "Dreams About Flying",
                         icon: "arrow_forward",
                         iconWeight: "bold",
                         fontSize: "1.19rem",
                         fontWeight: "regular",
                         color: "info",
+                        link: "guides/dreams-about-flying",
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <HyperlinkAnimation
+                      content={{
+                        text: "Lucid Dreams Intro",
+                        icon: "arrow_forward",
+                        iconWeight: "bold",
+                        fontSize: "1.19rem",
+                        fontWeight: "regular",
+                        color: "info",
+                        link: "guides/lucid-dreams-meaning",
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <HyperlinkAnimation
+                      content={{
+                        text: "Nightmares Explained",
+                        icon: "arrow_forward",
+                        iconWeight: "bold",
+                        fontSize: "1.19rem",
+                        fontWeight: "regular",
+                        color: "info",
+                        link: "guides/nightmares-explained",
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <HyperlinkAnimation
+                      content={{
+                        text: "Recurring Dreams",
+                        icon: "arrow_forward",
+                        iconWeight: "bold",
+                        fontSize: "1.19rem",
+                        fontWeight: "regular",
+                        color: "info",
+                        link: "guides/recurring-dreams",
                       }}
                     />
                   </ListItemButton>

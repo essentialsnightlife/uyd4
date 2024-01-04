@@ -68,7 +68,7 @@ function GuidesHome() {
             </MKTypography>
             <MKTypography variant="body1" color="white" mt={1}>
               Make sense of your night time experiences with our informative guides and unlock the
-              potential in your dream world
+              potential in your dream world.
             </MKTypography>
           </Grid>
         </Container>

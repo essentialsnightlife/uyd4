@@ -21,7 +21,7 @@ import DefaultFooter from "components/Footers/DefaultFooter";
 
 // Sections
 import DreamsOverview from "pages/LandingPages/Home/sections/DreamsOverview";
-import ContentRequest from "pages/LandingPages/Home/sections/ContentRequest";
+// import ContentRequest from "pages/LandingPages/Home/sections/ContentRequest";
 
 // Routes
 import routes from "routes";
@@ -89,7 +89,6 @@ function Home() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <ContentRequest />
         <DreamsOverview />
         <GetFeedback />
       </Card>

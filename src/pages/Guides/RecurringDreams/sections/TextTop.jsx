@@ -35,9 +35,6 @@ function TextTop() {
             symbol. Recurring dreams can be a sign that there is something unresolved or unaddressed
             in our lives, and they can be a way for our subconscious to prompt us to take action.
           </MKTypography>
-          <MKTypography variant="h4" mb={2}>
-            Positives
-          </MKTypography>
           <MKTypography variant="h5" mb={1}>
             Personal Growth
           </MKTypography>

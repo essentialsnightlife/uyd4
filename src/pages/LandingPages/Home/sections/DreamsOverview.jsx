@@ -29,21 +29,21 @@ function DreamsOverview() {
                 icon="touch_app"
                 title={
                   <>
-                    Dreams
+                    Meaningful
                     <br />
-                    Overview
+                    Dreams
                   </>
                 }
-                description="Write some stuff about dreaming have been re-design with the new look."
+                description="Use this app to start making the most of your dreams."
               />
               <RotatingCardBack
                 image={bgBack}
-                title="Self Improvement"
-                description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
+                title="Take Action"
+                description="Opening up to your desires or addressing your priority concerns can change your life."
                 action={{
                   type: "internal",
-                  route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  route: "/dream-analyser",
+                  label: "Free Dream Analyser",
                 }}
               />
             </RotatingCard>
@@ -53,16 +53,15 @@ function DreamsOverview() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="content_copy"
-                  title="Problem Solving"
-                  description="Built by developers for developers. Check the foundation and you will find
-                    everything inside our documentation."
+                  title="Get Insights"
+                  description="Identify patterns or issues that may be restricting progress in your personal or professional life."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="Recovery"
-                  description="The world's most popular react components library for building user interfaces."
+                  title="Personal Transformation"
+                  description="Dreams often unveil latent emotions and experiences that may be challenging to confront in our waking existence."
                 />
               </Grid>
             </Grid>
@@ -70,15 +69,15 @@ function DreamsOverview() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="price_change"
-                  title="Become a Better Person"
-                  description="Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System."
+                  title="Spiritual Understanding"
+                  description="Interpretations of dreams are used to gain insight into ones spiritual journey and seek guidance on important decisions."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="devices"
-                  title="Another Header"
-                  description="Regardless of the screen size, the website content will naturally fit the given resolution."
+                  title="Dream Journals"
+                  description="Essential practice for recording and analysing dreams and can help with improved dream recall and identifying trends."
                 />
               </Grid>
             </Grid>
