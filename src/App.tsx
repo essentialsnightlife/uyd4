@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { useEffect } from "react";
 
+import { HelmetProvider } from "react-helmet-async";
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
@@ -14,7 +15,6 @@ import theme from "./assets/theme";
 
 // Material Kit 2 PRO React routes
 import routes from "./routes";
-// import { HelmetProvider } from "react-helmet-async";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -39,14 +39,14 @@ export default function App() {
     });
 
   return (
-    // <HelmetProvider>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </ThemeProvider>
-    // </HelmetProvider>
+    <HelmetProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Routes>
+          {getRoutes(routes)}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }

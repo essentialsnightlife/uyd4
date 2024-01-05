@@ -41,13 +41,15 @@ function Home() {
     console.log("HomeSession", session);
   }, [session]);
 
+  console.log(bgImage);
+
   return (
     <>
       <Seo
         title="Home"
         description="UYD: Free Dream Analyser and guides to understand and use your dreams more effectively"
         type="website"
-        image="palm.jpeg"
+        image="/palm.jpeg"
       />
 
       <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />

@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { setTitle, stripHtml } from "../../helpers";
 
 type SeoProps = {
@@ -24,7 +24,7 @@ export default function Seo({ title, description, type, image }: SeoProps) {
       <meta property="og:type" content={type} />
       <meta property="og:title" content={setTitle(title)} />
       <meta property="og:description" content={stripHtml(description)} />
-      <meta property="og:image" content={`https://useyourdream.com/${image}`} />
+      <meta property="og:image" content={`https://useyourdream.com${image}`} />
       <meta property="og:url" content={`https://useyourdream.com${pathname}`} />
       {/* End Facebook tags */}
 
