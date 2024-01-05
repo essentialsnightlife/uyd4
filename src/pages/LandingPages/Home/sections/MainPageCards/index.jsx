@@ -41,7 +41,7 @@ function MainPageCards() {
             <SectionCards
               image="https://images.unsplash.com/photo-1696888657706-5875304374c6"
               title="Shop Dreaming Products"
-              description="Coming soon."
+              description="Coming soon. We are working on a range of products to help you enhance your dream exploration and understanding."
             />
             {/*</Link>*/}
           </Grid>
