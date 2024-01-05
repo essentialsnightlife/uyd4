@@ -46,7 +46,7 @@ function Home() {
   return (
     <>
       <Seo
-        title="Home"
+        // title="Use Your Dream"
         description="UYD: Free Dream Analyser and guides to understand and use your dreams more effectively"
         type="website"
         image="/palm.jpeg"
