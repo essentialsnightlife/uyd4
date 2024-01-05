@@ -27,7 +27,7 @@ function GetFeedback() {
             <Grid container spacing={1}>
               <Grid item xs={4}>
                 <MKButton
-                  href="https://www.creative-tim.com"
+                  href="https://uyd-feedback-l1vnlxzn.featureupvote.com/"
                   variant="gradient"
                   color="info"
                   sx={{ height: "100%" }}

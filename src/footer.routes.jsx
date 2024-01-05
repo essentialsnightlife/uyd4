@@ -40,21 +40,14 @@ export default {
   ],
   menus: [
     {
-      name: "company",
-      items: [{ name: "about us", href: "https://www.creative-tim.com/presentation" }],
-    },
-    {
-      name: "help & support",
-      items: [
-        { name: "contact us", href: "https://www.creative-tim.com/contact-us" },
-        { name: "leave feedback", href: "https://www.creative-tim.com/contact-us" },
-      ],
+      name: "Support",
+      items: [{ name: "leave feedback", href: "https://uyd-feedback-l1vnlxzn.featureupvote.com/" }],
     },
     {
       name: "legal",
       items: [
-        { name: "terms & conditions", href: "https://www.creative-tim.com/terms" },
-        { name: "privacy policy", href: "https://www.creative-tim.com/privacy" },
+        { name: "terms & conditions", href: "/support/disclaimers" },
+        { name: "privacy policy", href: "/support/privacy" },
       ],
     },
   ],
