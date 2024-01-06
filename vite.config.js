@@ -4,6 +4,7 @@ import viteTsconfigPaths from "vite-tsconfig-paths";
 import svgrPlugin from "vite-plugin-svgr";
 import path from "path";
 import { fileURLToPath } from "url";
+import Sitemap from "vite-plugin-sitemap";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -50,6 +51,7 @@ export default defineConfig({
         // ...svgr options (https://react-svgr.com/docs/options/)
       },
     }),
+    Sitemap(),
   ],
   base: "./",
 });
