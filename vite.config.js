@@ -4,7 +4,8 @@ import viteTsconfigPaths from "vite-tsconfig-paths";
 import svgrPlugin from "vite-plugin-svgr";
 import path from "path";
 import { fileURLToPath } from "url";
-import Sitemap from "vite-plugin-sitemap";
+import Pages from "vite-plugin-pages";
+import generateSitemap from "vite-plugin-pages-sitemap";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,7 +41,19 @@ export default defineConfig({
     },
   },
   build: {
+    chunkSizeWarningLimit: 1600,
     outDir: "build",
+    minify: "terser",
+    // manifest: true,
+    sourcemap: false,
+    reportCompressedSize: true,
+    rollupOptions: {
+      output: {
+        entryFileNames: "js/[name].js",
+        chunkFileNames: "js/[name].js",
+        assetFileNames: "assets/[name].[ext]",
+      },
+    },
   },
   plugins: [
     reactRefresh(),
@@ -51,7 +64,9 @@ export default defineConfig({
         // ...svgr options (https://react-svgr.com/docs/options/)
       },
     }),
-    Sitemap(),
+    Pages({
+      onRoutesGenerated: (routes) => generateSitemap({ routes }),
+    }),
   ],
   base: "./",
 });
