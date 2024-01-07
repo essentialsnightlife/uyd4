@@ -116,8 +116,7 @@ const DreamAnalyser = () => {
       <Seo
         title="Dream Analyser"
         description="Unlock the secrets of your subconscious with our dream analyzer app, guiding you towards self-discovery and inner understanding."
-        type="website"
-        image="palm.jpeg"
+        image="/palm.jpeg"
       />
 
       <DefaultNavbar routes={routes} brand={"Use Your Dream"} transparent light />

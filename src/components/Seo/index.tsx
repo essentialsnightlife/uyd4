@@ -7,10 +7,9 @@ type SeoProps = {
   title?: string;
   description: string;
   image: string;
-  type: string;
 };
 
-export default function Seo({ title, description, type, image }: SeoProps) {
+export default function Seo({ title, description, image }: SeoProps) {
   const { pathname } = useLocation();
 
   return (
@@ -21,7 +20,6 @@ export default function Seo({ title, description, type, image }: SeoProps) {
       {/* End standard metadata tags */}
 
       {/* Facebook tags */}
-      <meta property="og:type" content={type} />
       {title && <meta property="og:title" content={setTitle(title)} />}
       <meta property="og:description" content={stripHtml(description)} />
       <meta property="og:url" content={`https://useyourdream.com${pathname}`} />
