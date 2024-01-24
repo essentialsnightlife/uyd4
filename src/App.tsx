@@ -19,6 +19,7 @@ import { HelmetProvider } from "react-helmet-async";
 
 export default function App() {
   const { pathname } = useLocation();
+  const helmetContext = {};
 
   // Setting page scroll to 0 when changing the route
   // useEffect(() => {
@@ -40,7 +41,7 @@ export default function App() {
     });
 
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
