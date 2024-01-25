@@ -24,6 +24,7 @@ export default function SEO({ title, description, imageUrl, url }: SEOProps) {
       <meta property="og:image:secure_url" content={imageUrl} />
       <meta property="og:image:height" content='1200' />
       <meta property="og:image:width" content='630' />
+      <meta property="og:image:type" content='image/jpeg' />
       <meta property="og:url" content={url} />
       {/* End Open Graph meta tags */}
       
