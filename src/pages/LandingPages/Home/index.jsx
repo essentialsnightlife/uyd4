@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-
+// seo
+import SEO from '../../../seo';
 // Material Kit 2 PRO React components
-import Seo from "components/Seo";
+// import Seo from "components/Seo";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
@@ -43,10 +44,12 @@ function Home() {
 
   return (
     <>
-      <Seo
+
+      <SEO
+        title="Use Your Dream"
         description="UYD: Free Dream Analyser and guides to understand and use your dreams more effectively"
-        type="website"
-        image="/palm.jpeg"
+        imageUrl={window.location.href+'palm.jpeg'}
+        url={window.location.href}
       />
 
       <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />
